@@ -1,4 +1,4 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.volunteer;
 
 import javax.persistence.*;
 import java.time.LocalDate;
