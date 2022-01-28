@@ -19,29 +19,25 @@ public class Volunteer {
 
 	private String email;
 
-	private LocalDate dob;
-
-	@Transient
-	private Integer age;
-
 	public Volunteer() {
 	}
 
-	public Volunteer(Long id, String firstName, String lastName, String email, LocalDate dob, Integer age) {
+	public Volunteer(String firstName, String lastName) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+
+	public Volunteer(Long id, String firstName, String lastName, String email) {
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.dob = dob;
-		this.age = age;
 	}
 
-	public Volunteer(String firstName, String lastName, String email, LocalDate dob, Integer age) {
+	public Volunteer(String firstName, String lastName, String email) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
-		this.dob = dob;
-		this.age = age;
 	}
 
 	public Long getId() {
@@ -76,22 +72,6 @@ public class Volunteer {
 		this.email = email;
 	}
 
-	public LocalDate getDob() {
-		return dob;
-	}
-
-	public void setDob(LocalDate dob) {
-		this.dob = dob;
-	}
-
-	public Integer getAge() {
-		return Period.between(this.dob, LocalDate.now()).getYears();
-	}
-
-	public void setAge(Integer age) {
-		this.age = age;
-	}
-
 	@Override
 	public String toString() {
 		return "Volunteer{" +
@@ -99,8 +79,6 @@ public class Volunteer {
 		       ", firstName='" + firstName + '\'' +
 		       ", lastName='" + lastName + '\'' +
 		       ", email='" + email + '\'' +
-		       ", dob=" + dob +
-		       ", age='" + age + '\'' +
 		       '}';
 	}
 }

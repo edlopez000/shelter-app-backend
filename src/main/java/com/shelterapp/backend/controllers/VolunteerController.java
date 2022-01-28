@@ -21,13 +21,8 @@ public class VolunteerController {
 	}
 
 	@GetMapping
-	public List<Volunteer> getVolunteers(){
+	public String getVolunteers(){
 		return volunteerService.getVolunteers();
 	}
-
-//	@PostMapping
-//	public void registerNewVolunteer(@RequestBody Volunteer volunteer) {
-//		volunteerService.addNewVolunteer(volunteer);
-//	}
 
 }

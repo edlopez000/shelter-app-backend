@@ -5,6 +5,7 @@ import com.shelterapp.backend.repositories.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -17,8 +18,15 @@ public class VolunteerService {
 		this.volunteerRepository = volunteerRepository;
 	}
 
-	public List<Volunteer> getVolunteers() {
-		return volunteerRepository.findAll();
+	public String getVolunteers() {
+//		return List.of(new Volunteer(
+//		"First",
+//		"Last"
+//		));
+
+
+//		return volunteerRepository.findAll();
+		return "test string";
 	}
 
 //	public void addNewVolunteer(Volunteer volunteer) {
