@@ -1,12 +1,8 @@
 package com.shelterapp.backend.services;
 
-import com.shelterapp.backend.models.Volunteer;
 import com.shelterapp.backend.repositories.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class VolunteerService {
