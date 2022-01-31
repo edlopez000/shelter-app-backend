@@ -25,5 +25,9 @@ public class UsersController {
         return usersRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
+	@PostMapping
+	public void registerNewVolunteer(@RequestBody User user) {
+		usersRepository.save(user);
+	}
 
 }
