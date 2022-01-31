@@ -1,15 +1,16 @@
 package com.shelterapp.backend.login;
 
-import javax.persistence.*;
-
-//https://www.youtube.com/watch?v=DrKA56M1NRs&t=3s
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
 @Table(name="login")
 public class Login {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue
 	private long id;
 	private String email;
 	private String password;
