@@ -24,7 +24,7 @@ public class LoginController {
 
     @GetMapping("/{id}")
     public Login getLogin(@PathVariable Long id) {
-        return (Login) userService.getLogin(id);
+        return userService.getLogin(id);
     }
 
     @PostMapping

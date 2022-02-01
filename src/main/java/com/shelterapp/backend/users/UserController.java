@@ -24,12 +24,12 @@ public class UserController {
 
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) {
-        return (User) userService.getUser(id);
+        return userService.getUser(id);
     }
 
-	@PostMapping
-	public void registerNewUser(@RequestBody User user) {
-		userService.registerNewUser(user);
-	}
+    @PostMapping
+    public void registerNewUser(@RequestBody User user) {
+        userService.registerNewUser(user);
+    }
 
 }

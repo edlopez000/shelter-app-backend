@@ -8,22 +8,22 @@ import java.util.List;
 @Service
 public class LoginService {
 
-	private final LoginRepository loginRepository;
+    private final LoginRepository loginRepository;
 
-	@Autowired
-	public LoginService(LoginRepository loginRepository) {
-		this.loginRepository = loginRepository;
-	}
+    @Autowired
+    public LoginService(LoginRepository loginRepository) {
+        this.loginRepository = loginRepository;
+    }
 
-	public Login getLogin(Long id) {
-		return loginRepository.findById(id).orElseThrow(RuntimeException::new);
-	}
+    public Login getLogin(Long id) {
+        return loginRepository.findById(id).orElseThrow(RuntimeException::new);
+    }
 
-	public void registerNewLogin(Login login) {
-		loginRepository.save(login);
-	}
+    public void registerNewLogin(Login login) {
+        loginRepository.save(login);
+    }
 
-	public List<Login> findAll() {
-		return loginRepository.findAll();
-	}
+    public List<Login> findAll() {
+        return loginRepository.findAll();
+    }
 }
