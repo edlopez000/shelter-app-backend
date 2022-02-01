@@ -1,7 +1,6 @@
 package com.shelterapp.backend.login;
 
 
-import com.shelterapp.backend.login.Login;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
