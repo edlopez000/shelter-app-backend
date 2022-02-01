@@ -8,17 +8,22 @@ import java.util.List;
 @Service
 public class UserService {
 
-    private final UsersRepository usersRepository;
+    private final UserRepository userRepository;
 
     @Autowired
-    public UserService(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
     }
 
-    public List<User> getUsers() {
-        return usersRepository.findAll();
+    public User getUser(Long id) {
+        return userRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
+    public void registerNewUser(User user) {
+        userRepository.save(user);
+    }
 
-
+    public List<User> findAll() {
+        return userRepository.findAll();
+    }
 }
