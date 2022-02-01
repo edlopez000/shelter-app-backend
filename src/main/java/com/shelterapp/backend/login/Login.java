@@ -6,29 +6,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="logins")
+@Table(name="login")
 public class Login {
 
 	@Id
 	@GeneratedValue
-	private long id;
+	private Long id;
 	private String email;
 	private String password;
+
 
 	public Login() {
 	}
 
-	public Login(long id, String email, String password) {
+
+	public Login(Long id, String email, String password) {
 		this.id = id;
 		this.email = email;
 		this.password = password;
 	}
 
-	public long getId() {
+	public Long getId() {
 		return id;
 	}
 
-	public void setId(long id) {
+	public void setId(Long id) {
 		this.id = id;
 	}
 

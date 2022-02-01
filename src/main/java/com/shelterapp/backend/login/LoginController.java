@@ -1,30 +1,36 @@
 package com.shelterapp.backend.login;
 
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.shelterapp.backend.login.Login;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Controller
+@RestController
 @RequestMapping("/login")
 public class LoginController {
 
-    private final LoginRepository loginRepository;
-    
-    public LoginController(LoginRepository loginRepository) {
-        this.loginRepository = loginRepository;
+    private final LoginService userService;
+
+    @Autowired
+    public LoginController(LoginService userService) {
+        this.userService = userService;
     }
 
     @GetMapping
-    public List<Login> getLogin() {
-        return loginRepository.findAll();
+    public List<Login> getLogins() {
+        return userService.findAll();
     }
 
     @GetMapping("/{id}")
-    public Login getUser(@PathVariable Long id) {
-        return loginRepository.findById(id).orElseThrow(RuntimeException::new);
+    public Login getLogin(@PathVariable Long id) {
+        return (Login) userService.getLogin(id);
+    }
+
+    @PostMapping
+    public void registerNewLogin(@RequestBody Login login) {
+        userService.registerNewLogin(login);
     }
 
 }
