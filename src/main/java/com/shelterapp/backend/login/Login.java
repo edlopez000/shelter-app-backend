@@ -6,45 +6,47 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="logins")
+@Table(name = "logins")
 public class Login {
 
-	@Id
-	@GeneratedValue
-	private long id;
-	private String email;
-	private String password;
+    @Id
+    @GeneratedValue
+    private Long id;
+    private String email;
+    private String password;
 
-	public Login() {
-	}
 
-	public Login(long id, String email, String password) {
-		this.id = id;
-		this.email = email;
-		this.password = password;
-	}
+    public Login() {
+    }
 
-	public long getId() {
-		return id;
-	}
 
-	public void setId(long id) {
-		this.id = id;
-	}
+    public Login(Long id, String email, String password) {
+        this.id = id;
+        this.email = email;
+        this.password = password;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
