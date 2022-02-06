@@ -1,4 +1,4 @@
-package com.shelterapp.backend.users;
+package com.shelterapp.backend.user;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -12,6 +12,7 @@ public class User {
     @Id
     @GeneratedValue
     private Long id;
+    private String name;
     private String email;
     private String password;
 

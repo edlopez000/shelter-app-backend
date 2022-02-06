@@ -1,9 +1,9 @@
-package com.shelterapp.backend.login;
+package com.shelterapp.backend.user;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoginRepository extends JpaRepository<Login, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 }
