@@ -1,4 +1,4 @@
-package com.shelterapp.backend.controller;
+package com.shelterapp.backend.authentication;
 
 import com.shelterapp.backend.dto.LoginDto;
 import com.shelterapp.backend.dto.SignupDto;
@@ -55,6 +55,7 @@ public class AuthController {
         // create user object
         User user = new User();
         user.setName(signUpDto.getName());
+        user.setUsername(signUpDto.getUsername());
         user.setEmail(signUpDto.getEmail());
         user.setPassword(passwordEncoder.encode(signUpDto.getPassword()));
 
