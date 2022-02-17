@@ -1,6 +1,7 @@
 ## Shelter App Backend
 
-Shelter App Backend developed using: 
+Shelter App Backend developed using:
+
 * Java
 * Maven
 * MySQL
