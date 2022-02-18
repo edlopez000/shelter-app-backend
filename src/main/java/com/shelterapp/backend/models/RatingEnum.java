@@ -19,4 +19,3 @@ public enum RatingEnum {
     private RatingEnum type;
 
 }
-14.
