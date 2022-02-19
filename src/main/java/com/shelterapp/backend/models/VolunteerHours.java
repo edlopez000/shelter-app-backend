@@ -1,10 +1,15 @@
 package com.shelterapp.backend.models;
 
 
+import lombok.Data;
+import org.apache.tomcat.jni.Local;
+
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "volunteerHours")
+@Data
 public class VolunteerHours {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -13,5 +18,9 @@ public class VolunteerHours {
 
     @ManyToOne
     @JoinColumn(name = "volunteer_id") //FK
-    private Long volunteerId;
+    private Volunteer volunteer;
+
+    private LocalDateTime login;
+    private LocalDateTime logout;
+
 }

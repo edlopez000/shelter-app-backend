@@ -18,11 +18,11 @@ public class Session {
 
     @ManyToOne
     @JoinColumn(name = "volunteer_id") //FK
-    private Long volunteerId;
+    private Volunteer volunteer;
 
     @ManyToOne
     @JoinColumn(name = "animal_id") //FK
-    private Long animalId;
+    private Animal animal;
 
     @NotNull
     @Column(name = "submit_timestamp")
