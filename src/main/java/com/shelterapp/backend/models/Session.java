@@ -39,29 +39,29 @@ public class Session {
     private String mouthing;
     private String jumping;
     @Column(name = "c_walk_peed")
-    private Boolean cWalkPeed;
+    private boolean cWalkPeed;
     @Column(name = "c_walk_pooped")
-    private Boolean cWalkPooped;
+    private boolean cWalkPooped;
     @Column(name = "c_seems_house_trained")
-    private Boolean cSeemsHouseTrained;
+    private boolean cSeemsHouseTrained;
     @Column(name = "f_playing")
-    private Boolean fPlaying;
+    private boolean fPlaying;
     @Column(name = "f_clean_kennel")
-    private Boolean fCleanKennel;
+    private boolean fCleanKennel;
     @Column(name = "f_clean_litter")
-    private Boolean fCleanLitter;
+    private boolean fCleanLitter;
     @Column(name = "f_change_food_water")
-    private Boolean fChangeFoodWater;
+    private boolean fChangeFoodWater;
     @Column(name = "h_clean_groom_room")
-    private Boolean hCleanGroomRoom;
+    private boolean hCleanGroomRoom;
     @Column(name = "h_empty_wash_kongs")
-    private Boolean hEmptyWashKongs;
+    private boolean hEmptyWashKongs;
     @Column(name = "h_organize_vol_area")
-    private Boolean hOrganizeVolArea;
+    private boolean hOrganizeVolArea;
     @Column(name = "h_laundry")
-    private Boolean hLaundry;
+    private boolean hLaundry;
     @Column(name = "h_groundskeeping")
-    private Boolean hGroundskeeping;
+    private boolean hGroundskeeping;
 
 //look into @Column and Flyway...
     //look into setting default boolean to false. Maybe @ColumnDefault?

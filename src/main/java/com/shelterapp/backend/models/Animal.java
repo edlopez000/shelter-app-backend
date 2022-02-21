@@ -32,8 +32,8 @@ public class Animal {
     @NotNull
     private LocalDateTime exitDate;
     @NotNull
-    private Boolean adoptable;
+    private boolean adoptable;  //logic for if adoptable is false then rescueOnly must be true and vice versa
     @NotNull
-    private Boolean rescueOnly;
+    private boolean rescueOnly; //logic for if rescueOnly is false then adoptable must be true and vice versa
 
 }
