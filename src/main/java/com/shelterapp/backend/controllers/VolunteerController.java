@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
         @PostMapping
         public void createVolunteer(@RequestBody Volunteer volunteer) {
+            System.out.println(volunteer);
             volunteerRepository.save(volunteer);
 
         }
