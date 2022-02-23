@@ -4,7 +4,7 @@ Shelter App Backend developed using:
 
 * Java
 * Maven
-* MySQL
+* PostgreSQL
 * Spring Boot
 
 View pom.xml file for versions and additional dependencies
