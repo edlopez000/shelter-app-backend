@@ -9,16 +9,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-    @RestController
-    @RequestMapping("/animals")
-    public class AnimalController {
+@RestController
+@RequestMapping("/animals")
+public class AnimalController {
 
-        @Autowired
-        private AnimalRepository animalRepository;
+    @Autowired
+    private AnimalRepository animalRepository;
 
-        @PostMapping
-        public void createAnimal(@RequestBody Animal animal) {
-            animalRepository.save(animal);
+    @PostMapping
+    public void createAnimal(@RequestBody Animal animal) {
+        animalRepository.save(animal);
 
-        }
     }
+}

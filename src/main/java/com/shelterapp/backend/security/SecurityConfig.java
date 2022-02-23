@@ -55,8 +55,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception
-    {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.parentAuthenticationManager(customAuthenticationManager)
                 .userDetailsService(userDetailsService).passwordEncoder(passwordEncoderBean());
     }

@@ -16,6 +16,7 @@ public enum RatingEnum {
     public String getDisplayName() {
         return displayName;
     }
+
     private RatingEnum type;
 
 }

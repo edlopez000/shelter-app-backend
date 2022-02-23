@@ -9,17 +9,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-    @RestController
-    @RequestMapping("/volunteers")
-    public class VolunteerController {
+@RestController
+@RequestMapping("/volunteers")
+public class VolunteerController {
 
-        @Autowired
-        private VolunteerRepository volunteerRepository;
+    @Autowired
+    private VolunteerRepository volunteerRepository;
 
-        @PostMapping
-        public void createVolunteer(@RequestBody Volunteer volunteer) {
-            System.out.println(volunteer);
-            volunteerRepository.save(volunteer);
+    @PostMapping
+    public void createVolunteer(@RequestBody Volunteer volunteer) {
+        System.out.println(volunteer);
+        volunteerRepository.save(volunteer);
 
-        }
     }
+}
