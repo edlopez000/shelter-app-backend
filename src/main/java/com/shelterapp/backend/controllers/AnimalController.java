@@ -1,6 +1,7 @@
 package com.shelterapp.backend.controllers;
 
 import com.shelterapp.backend.models.Animal;
+import com.shelterapp.backend.models.data.AnimalRepository;
 import com.shelterapp.backend.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -27,5 +28,10 @@ public class AnimalController {
 
     @GetMapping("/{id}")
     public Animal getAnimal(@PathVariable Long id) {return animalService.getAnimal(id);}
+
+    @GetMapping("/species/{species}")
+    public List<Animal> findBySpecies(@PathVariable String species) {
+        return animalService.findBySpecies(species);
+    }
 
 }

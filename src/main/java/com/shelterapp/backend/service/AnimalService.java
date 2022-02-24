@@ -20,4 +20,6 @@ public class AnimalService {
     public void registerNewAnimal(Animal animal) {animalRepository.save(animal);}
 
     public List<Animal> findAll() {return animalRepository.findAll();}
+
+    public List<Animal> findBySpecies(String species) {return animalRepository.findBySpecies(species);}
 }
