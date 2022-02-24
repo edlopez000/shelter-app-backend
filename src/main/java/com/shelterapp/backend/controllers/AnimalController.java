@@ -10,29 +10,22 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/animals")
-@CrossOrigin(origins = "http://localhost:3000")
 public class AnimalController {
 
-    private final AnimalService animalService;
+    private AnimalService animalService;
 
     @Autowired
-    public AnimalController(AnimalService animalService) {
-        this.animalService = animalService;
-    }
-
-    @GetMapping
-    public List<Animal> getAnimals() {
-        return animalService.findAll();
-    }
-
-    @GetMapping("/{id}")
-     public Animal getAnimal(@PathVariable Long id) {
-        return animalService.getAnimal(id);
-    }
+    public AnimalController(AnimalService animalService) {this.animalService = animalService;}
 
     @PostMapping
     public void createAnimal(@RequestBody Animal animal) {
-        animalService.save(animal);
-
+        animalService.registerNewAnimal(animal);
     }
+
+    @GetMapping
+    public List<Animal> getAnimals() {return animalService.findAll();}
+
+    @GetMapping("/{id}")
+    public Animal getAnimal(@PathVariable Long id) {return animalService.getAnimal(id);}
+
 }

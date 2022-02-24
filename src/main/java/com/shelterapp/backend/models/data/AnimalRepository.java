@@ -9,4 +9,5 @@ import javax.transaction.Transactional;
 @Repository
 @Transactional
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
+
 }
