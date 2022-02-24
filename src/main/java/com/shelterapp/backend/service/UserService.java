@@ -1,5 +1,7 @@
-package com.shelterapp.backend.user;
+package com.shelterapp.backend.service;
 
+import com.shelterapp.backend.models.User;
+import com.shelterapp.backend.models.data.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

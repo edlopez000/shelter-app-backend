@@ -1,6 +1,8 @@
-package com.shelterapp.backend.user;
+package com.shelterapp.backend.controllers;
 
 
+import com.shelterapp.backend.models.User;
+import com.shelterapp.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

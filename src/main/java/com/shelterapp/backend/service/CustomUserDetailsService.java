@@ -1,7 +1,7 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.user.User;
-import com.shelterapp.backend.user.UserRepository;
+import com.shelterapp.backend.models.User;
+import com.shelterapp.backend.models.data.UserRepository;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

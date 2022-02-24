@@ -1,4 +1,4 @@
-package com.shelterapp.backend.user;
+package com.shelterapp.backend.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

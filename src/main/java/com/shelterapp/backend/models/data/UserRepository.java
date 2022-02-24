@@ -1,5 +1,6 @@
-package com.shelterapp.backend.user;
+package com.shelterapp.backend.models.data;
 
+import com.shelterapp.backend.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
