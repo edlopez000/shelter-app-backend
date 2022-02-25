@@ -1,24 +1,38 @@
 package com.shelterapp.backend.controllers;
 
 import com.shelterapp.backend.models.Animal;
-import com.shelterapp.backend.models.data.AnimalRepository;
+import com.shelterapp.backend.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
-    @RestController
-    @RequestMapping("/animals")
-    public class AnimalController {
+@RestController
+@RequestMapping("/animals")
+@CrossOrigin(origins = "http://localhost:3000")
+public class AnimalController {
 
-        @Autowired
-        private AnimalRepository animalRepository;
+    private final AnimalService animalService;
 
-        @PostMapping
-        public void createAnimal(@RequestBody Animal animal) {
-            animalRepository.save(animal);
-
-        }
+    @Autowired
+    public AnimalController(AnimalService animalService) {
+        this.animalService = animalService;
     }
+
+    @GetMapping
+    public List<Animal> getAnimals() {
+        return animalService.findAll();
+    }
+
+    @GetMapping("/{id}")
+    public Animal getAnimal(@PathVariable Long id) {
+        return animalService.getAnimal(id);
+    }
+
+    @PostMapping
+    public void createAnimal(@RequestBody Animal animal) {
+        animalService.save(animal);
+
+    }
+}
