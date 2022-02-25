@@ -1,6 +1,7 @@
 package com.shelterapp.backend.security;
 
 import com.shelterapp.backend.service.CustomUserDetailsService;
+import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,19 +22,24 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
+    private final CustomUserDetailsService userDetailsService;
+    private final CustomAuthenticationManager customAuthenticationManager;
+
     @Autowired
-    private CustomUserDetailsService userDetailsService;
+    public SecurityConfig(CustomUserDetailsService userDetailsService, CustomAuthenticationManager customAuthenticationManager) {
+        this.userDetailsService = userDetailsService;
+        this.customAuthenticationManager = customAuthenticationManager;
+    }
 
     @Bean
     PasswordEncoder passwordEncoderBean() {
         return new BCryptPasswordEncoder();
     }
 
-    @Autowired
-    private CustomAuthenticationManager customAuthenticationManager;
+
 
     @Override
-    protected void configure(HttpSecurity http) throws Exception {
+    protected void configure(@NotNull HttpSecurity http) throws Exception {
         http
                 .csrf().disable()
                 .authorizeRequests()
@@ -41,6 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/auth/**").permitAll()
                 .antMatchers("/error").permitAll()
                 .antMatchers("/animals").permitAll()
+                .antMatchers("/animals/**").permitAll()
                 .antMatchers("/volunteers").permitAll()
                 // Other routes will be added here like for example:
                 // .antMatchers("/api/animals/**").hasRole("ROLE_USER")
