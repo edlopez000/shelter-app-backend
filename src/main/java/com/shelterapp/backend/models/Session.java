@@ -62,6 +62,14 @@ public class Session {
     private Boolean hLaundry;
     @Column(name = "h_groundskeeping")
     private Boolean hGroundskeeping;
+    @Column(name = "e_treats")
+    private Boolean eTreats;
+    @Column(name = "e_toys")
+    private Boolean eToys;
+    @Column(name = "e_playing")
+    private Boolean ePlaying;
+    @Column(name = "e_cuddle_time")
+    private Boolean eCuddleTime;
 
 //look into @Column and Flyway...
     //look into setting default boolean to false. Maybe @ColumnDefault?
