@@ -11,17 +11,24 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class SessionService {
-    @Autowired
-    private SessionRepository sessionRepository;
+
+    private final SessionRepository sessionRepository;
+
+    private final VolunteerRepository volunteerRepository;
+
+    private final AnimalRepository animalRepository;
 
     @Autowired
-    private VolunteerRepository volunteerRepository;
+    public SessionService(AnimalRepository animalRepository, VolunteerRepository volunteerRepository, SessionRepository sessionRepository) {
+        this.animalRepository = animalRepository;
+        this.volunteerRepository = volunteerRepository;
+        this.sessionRepository = sessionRepository;
 
-    @Autowired
-    private AnimalRepository animalRepository;
+    }
 
-//    public void saveSessionData(SessionDto sessionDTO) {
-//        Volunteer volunteer = VolunteerRepository.findById
-//        Animal animal = AnimalRepository.findById
-//    }
+
+    public void saveSessionData(SessionDto sessionDTO) {
+        Volunteer volunteer = VolunteerRepository.findById();
+        Animal animal = AnimalRepository.findById
+    }
 }

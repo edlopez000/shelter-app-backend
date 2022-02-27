@@ -9,7 +9,5 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-
-
 public interface SessionRepository extends JpaRepository<Session, Long> {
 }
