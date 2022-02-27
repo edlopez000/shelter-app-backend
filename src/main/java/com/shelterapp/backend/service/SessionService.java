@@ -26,9 +26,8 @@ public class SessionService {
 
     }
 
-
-    public void saveSessionData(SessionDto sessionDTO) {
-        Volunteer volunteer = VolunteerRepository.findById();
-        Animal animal = AnimalRepository.findById
-    }
+//    public void saveSessionData(SessionDto sessionDto) {
+//        Volunteer volunteer = VolunteerRepository.findById();
+//        Animal animal = AnimalRepository.findById()
+//    }
 }
