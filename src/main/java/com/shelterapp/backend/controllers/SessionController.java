@@ -22,4 +22,7 @@ public class SessionController {
     public ResponseEntity createSession(@RequestBody SessionDto sessionDTO) {
         return sessionService.saveSessionData(sessionDTO);
     }
+
+    @GetMapping
+    public List<Session> getSessions() {return sessionService.findAll();}
 }

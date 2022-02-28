@@ -31,6 +31,8 @@ public class SessionService {
         this.sessionRepository = sessionRepository;
     }
 
+    public List<Session> findAll() {return sessionRepository.findAll();}
+
     public ResponseEntity saveSessionData(SessionDto sessionDto) {
         Session session = new Session();
         Optional<Volunteer> volunteer = volunteerRepository.findById(sessionDto.getVolunteerId());
