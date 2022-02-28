@@ -7,7 +7,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "session")
+@Table(name = "sessions")
 @Data
 public class Session {
     @Id
@@ -26,6 +26,7 @@ public class Session {
     @NotNull
     @Column(name = "submit_timestamp")
     private LocalDateTime submitTimestamp;
+    @Column(name = "type")
     private RatingEnum type;
     @Column(name = "kennel_out")
     private String kennelOut;
@@ -33,9 +34,13 @@ public class Session {
     private String kennelThrough;
     @Column(name = "kennel_in")
     private String kennelIn;
+    @Column(name = "shyness")
     private String shyness;
+    @Column(name = "leash")
     private String leash;
+    @Column(name = "mouthing")
     private String mouthing;
+    @Column(name = "jumping")
     private String jumping;
     @Column(name = "c_walk_peed")
     private boolean cWalkPeed;
@@ -61,9 +66,5 @@ public class Session {
     private boolean hLaundry;
     @Column(name = "h_groundskeeping")
     private boolean hGroundskeeping;
-
-//look into @Column and Flyway...
-    //look into setting default boolean to false. Maybe @ColumnDefault?
-
 
 }

@@ -10,8 +10,8 @@ import java.time.LocalDateTime;
 
 @Data
 public class SessionDto {
-    private String volunteerId;
-    private String animalId;
+    private Long volunteerId;
+    private Long animalId;
     private LocalDateTime submitTimestamp;
     private RatingEnum type;
     private String kennelOut;
@@ -33,9 +33,4 @@ public class SessionDto {
     private boolean hOrganizeVolArea;
     private boolean hLaundry;
     private boolean hGroundskeeping;
-
-//look into  and Flyway...
-    //look into setting default boolean to false. Maybe Default?
-
-
 }
