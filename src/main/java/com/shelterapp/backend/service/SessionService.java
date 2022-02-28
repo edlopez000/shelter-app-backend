@@ -10,6 +10,8 @@ import com.shelterapp.backend.models.data.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,11 +33,23 @@ public class SessionService {
         this.sessionRepository = sessionRepository;
     }
 
+    @PostMapping("/session")
     public ResponseEntity saveSessionData(SessionDto sessionDto) {
         Session session = new Session();
         Optional<Volunteer> volunteer = volunteerRepository.findById(sessionDto.getVolunteerId());
         Optional<Animal> animal = animalRepository.findById(sessionDto.getAnimalId());
-        if (volunteer.isPresent() && animal.isPresent()) {
+        if (volunteer.isPresent() && animal.isEmpty()) {
+            session.setVolunteer(volunteer.get());
+            session.setSubmitTimestamp(LocalDateTime.now());
+            session.setHCleanGroomRoom(sessionDto.isHCleanGroomRoom());
+            session.setHEmptyWashKongs(sessionDto.isHEmptyWashKongs());
+            session.setHLaundry(sessionDto.isHLaundry());
+            session.setHOrganizeVolArea(sessionDto.isHOrganizeVolArea());
+            session.setHGroundskeeping(sessionDto.isHGroundskeeping());
+            sessionRepository.save(session);
+            System.out.println(session);
+            return ResponseEntity.ok().build();
+        } else if (volunteer.isPresent()) {
             session.setAnimal(animal.get());
             session.setVolunteer(volunteer.get());
             session.setSubmitTimestamp(LocalDateTime.now());
@@ -54,15 +68,10 @@ public class SessionService {
             session.setFCleanKennel(sessionDto.isFCleanKennel());
             session.setFCleanLitter(sessionDto.isFCleanKennel());
             session.setFChangeFoodWater(sessionDto.isFChangeFoodWater());
-            session.setHCleanGroomRoom(sessionDto.isHCleanGroomRoom());
-            session.setHEmptyWashKongs(sessionDto.isHOrganizeVolArea());
-            session.setHLaundry(sessionDto.isHLaundry());
-            session.setHGroundskeeping(sessionDto.isHGroundskeeping());
             sessionRepository.save(session);
             System.out.println(session);
             return ResponseEntity.ok().build();
-        } else {
-            return ResponseEntity.notFound().build();
         }
+            return ResponseEntity.notFound().build();
     }
 }

@@ -28,6 +28,7 @@ public class SessionDto {
     private boolean fCleanKennel;
     private boolean fCleanLitter;
     private boolean fChangeFoodWater;
+
     private boolean hCleanGroomRoom;
     private boolean hEmptyWashKongs;
     private boolean hOrganizeVolArea;

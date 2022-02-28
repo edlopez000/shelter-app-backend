@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+
 import java.util.List;
 
 
@@ -18,7 +19,7 @@ public class SessionController {
     @Autowired
     private SessionService sessionService;
 
-    @PostMapping
+
     public ResponseEntity createSession(@RequestBody SessionDto sessionDTO) {
         return sessionService.saveSessionData(sessionDTO);
     }
