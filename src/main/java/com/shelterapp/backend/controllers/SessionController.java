@@ -24,6 +24,4 @@ public class SessionController {
         return sessionService.saveSessionData(sessionDTO);
     }
 
-    @GetMapping
-    public List<Session> getSessions() {return sessionService.findAll();}
 }
