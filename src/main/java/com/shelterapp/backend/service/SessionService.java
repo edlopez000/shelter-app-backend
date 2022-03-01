@@ -74,4 +74,10 @@ public class SessionService {
         }
             return ResponseEntity.notFound().build();
     }
+
+    public List<Session> findByAnimalID(Long id) {
+        Animal animal = animalRepository.getById(id);
+        List<Session> sessions = sessionRepository.findAllByAnimal(animal);
+        return sessions;
+    }
 }
