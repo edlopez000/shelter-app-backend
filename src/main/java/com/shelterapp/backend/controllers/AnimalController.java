@@ -33,6 +33,5 @@ public class AnimalController {
     @PostMapping
     public void createAnimal(@RequestBody Animal animal) {
         animalService.save(animal);
-
     }
 }

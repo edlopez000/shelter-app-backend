@@ -3,8 +3,6 @@ package com.shelterapp.backend.dto;
 import com.shelterapp.backend.models.RatingEnum;
 import lombok.Data;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 

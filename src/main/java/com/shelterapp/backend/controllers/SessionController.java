@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -24,14 +24,19 @@ public class SessionController {
         return sessionService.saveSessionData(sessionDTO);
     }
 
-    @GetMapping
-    public List<Session> getAllSessions() {return sessionService.findAll();}
+//    @GetMapping("/{id}")
+//    public ResponseEntity<List<Session>> getSessionsByAnimal(@PathVariable Long id) {
+//        List<Session> allAnimalSessions = sessionService.findByAnimalId(id);
+//        return ResponseEntity.ok(allAnimalSessions.get(0));
+//    }
 
     @GetMapping("/{id}")
-    public List<Session> getSessions(@PathVariable Long id) {
-        System.out.println("we are here");
-        return sessionService.findByAnimalID(id);
-
+    public ResponseEntity<List<Session>> getSessions(@PathVariable Long id) {
+        return ResponseEntity.ok(sessionService.findByAnimalId(id));
     }
 
+    @GetMapping
+    public List<Session> getAll() {
+        return sessionService.findAll();
+    }
 }

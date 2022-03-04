@@ -8,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "animal")
@@ -36,4 +37,6 @@ public class Animal {
     @NotNull
     private boolean rescueOnly; //logic for if rescueOnly is false then adoptable must be true and vice versa
 
+    @OneToMany(mappedBy = "animal")
+    private List<Session> sessionList;
 }

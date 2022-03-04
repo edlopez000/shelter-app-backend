@@ -7,11 +7,11 @@ import org.springframework.stereotype.Repository;
 
 
 import javax.transaction.Transactional;
-import java.util.List;
+import java.util.ArrayList;
 
 @Repository
 @Transactional
 public interface SessionRepository extends JpaRepository<Session, Long> {
 
-    List<Session> findAllByAnimal(Animal animal);
+    ArrayList<Session> findAllByAnimal(Animal animal);
 }

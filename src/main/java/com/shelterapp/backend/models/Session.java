@@ -15,9 +15,9 @@ public class Session {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @ManyToOne
-    @JoinColumn(name = "volunteer_id") //FK
-    private Volunteer volunteer;
+//    @ManyToOne
+//    @JoinColumn(name = "volunteer_id") //FK
+//    private Volunteer volunteer;
 
     @ManyToOne
     @JoinColumn(name = "animal_id") //FK
