@@ -14,7 +14,7 @@ public class Volunteer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private long id;
 
     @NotBlank(message = "Name cannot be left blank.")
     @Size(min = 2, max = 50, message = "Name must be between 3 and 50 characters.")

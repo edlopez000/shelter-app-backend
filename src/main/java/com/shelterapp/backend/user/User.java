@@ -15,27 +15,19 @@ import java.util.List;
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id", nullable = false)
-    private Long user_id;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_vol_id")
-    @NotNull
-    @NotBlank
-    private Volunteer volunteer_id;
+    @Column(name = "id", nullable = false)
+    private long id;
     private String name;
     private String username;
     private String email;
     private String password;
     private Boolean enabled = true;
 
-    public User(Volunteer volunteer_id,
-                String name,
+    public User(String name,
                 String username,
                 String email,
                 String password,
                 Boolean enabled) {
-        this.volunteer_id = volunteer_id;
         this.name = name;
         this.username = username;
         this.email = email;
@@ -47,7 +39,7 @@ public class User {
     }
 
     public long getId() {
-        return user_id;
+        return id;
     }
 
     public String getName() {

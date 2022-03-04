@@ -20,13 +20,16 @@ import java.util.Optional;
 @Service
 public class SessionService {
 
+    @Autowired
     private final SessionRepository sessionRepository;
 
+    @Autowired
     private final VolunteerRepository volunteerRepository;
 
+    @Autowired
     private final AnimalRepository animalRepository;
 
-    @Autowired
+
     public SessionService(AnimalRepository animalRepository,
                           VolunteerRepository volunteerRepository,
                           SessionRepository sessionRepository
@@ -74,6 +77,6 @@ public class SessionService {
     };
 
     public List<Session> findAll() {
-        return null;
+        return sessionRepository.findAll();
     }
 }

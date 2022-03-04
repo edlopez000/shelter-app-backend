@@ -28,6 +28,7 @@ public class HouseController {
     @Autowired
     private HouseService houseService;
 
+    @Autowired
     private HouseRepository houseRepository;
 
     @Autowired

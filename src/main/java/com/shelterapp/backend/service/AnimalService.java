@@ -11,7 +11,8 @@ import java.util.List;
 @Service
 public class AnimalService {
 
-    private final AnimalRepository animalRepository;
+    @Autowired
+    private AnimalRepository animalRepository;
 
     @Autowired
     public AnimalService(AnimalRepository animalRepository) {
