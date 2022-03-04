@@ -1,10 +1,10 @@
 package com.shelterapp.backend.dto;
 
 public class LoginDto {
-    private String username;
+    private static String username;
     private String password;
 
-    public String getUsername() {
+    public static String getUsername() {
         return username;
     }
 

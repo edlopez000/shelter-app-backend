@@ -1,26 +1,31 @@
 package com.shelterapp.backend.dto;
 
+
 import com.shelterapp.backend.models.RatingEnum;
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
-
+@Component
+@NotNull
 @Data
 public class SessionDto {
     private Long volunteerId;
     private Long animalId;
+
     private LocalDateTime submitTimestamp;
     private RatingEnum type;
-    private String kennelOut;
-    private String kennelThrough;
-    private String kennelIn;
-    private String shyness;
-    private String leash;
-    private String mouthing;
-    private String jumping;
+
+//    private String kennelOut;
+//    private String kennelThrough;
+//    private String kennelIn;
+//    private String shyness;
+    private boolean leash;
+    private boolean mouthing;
+    private boolean jumping;
     private boolean cWalkPeed;
     private boolean cWalkPooped;
     private boolean cSeemsHouseTrained;
@@ -29,9 +34,5 @@ public class SessionDto {
     private boolean fCleanLitter;
     private boolean fChangeFoodWater;
 
-    private boolean hCleanGroomRoom;
-    private boolean hEmptyWashKongs;
-    private boolean hOrganizeVolArea;
-    private boolean hLaundry;
-    private boolean hGroundskeeping;
+
 }

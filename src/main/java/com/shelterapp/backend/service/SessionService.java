@@ -27,7 +27,10 @@ public class SessionService {
     private final AnimalRepository animalRepository;
 
     @Autowired
-    public SessionService(AnimalRepository animalRepository, VolunteerRepository volunteerRepository, SessionRepository sessionRepository) {
+    public SessionService(AnimalRepository animalRepository,
+                          VolunteerRepository volunteerRepository,
+                          SessionRepository sessionRepository
+    ) {
         this.animalRepository = animalRepository;
         this.volunteerRepository = volunteerRepository;
         this.sessionRepository = sessionRepository;
@@ -38,32 +41,21 @@ public class SessionService {
         Session session = new Session();
         Optional<Volunteer> volunteer = volunteerRepository.findById(sessionDto.getVolunteerId());
         Optional<Animal> animal = animalRepository.findById(sessionDto.getAnimalId());
-        if (volunteer.isPresent() && animal.isEmpty()) {
-            session.setVolunteer(volunteer.get());
-            session.setSubmitTimestamp(LocalDateTime.now());
-            session.setHCleanGroomRoom(sessionDto.isHCleanGroomRoom());
-            session.setHEmptyWashKongs(sessionDto.isHEmptyWashKongs());
-            session.setHLaundry(sessionDto.isHLaundry());
-            session.setHOrganizeVolArea(sessionDto.isHOrganizeVolArea());
-            session.setHGroundskeeping(sessionDto.isHGroundskeeping());
-            sessionRepository.save(session);
-            System.out.println(session);
-            return ResponseEntity.ok().build();
-        } else if (volunteer.isPresent()) {
+        if (volunteer.isPresent() && animal.isPresent()) {
             session.setAnimal(animal.get());
             session.setVolunteer(volunteer.get());
             session.setSubmitTimestamp(LocalDateTime.now());
-            session.setType(sessionDto.getType());
-            session.setKennelOut(sessionDto.getKennelOut());
-            session.setKennelThrough(sessionDto.getKennelThrough());
-            session.setKennelIn(sessionDto.getKennelIn());
-            session.setShyness(sessionDto.getShyness());
-            session.setLeash(sessionDto.getLeash());
-            session.setMouthing(sessionDto.getMouthing());
-            session.setJumping(sessionDto.getJumping());
+//            session.setKennelOut(sessionDto.getType());
+//            session.setKennelThrough(sessionDto.getType());
+//            session.setKennelIn(sessionDto.getKennelIn());
+//            session.setShyness(sessionDto.getShyness());
+//            session.setLeash(sessionDto.getType());
+//            session.setMouthing(sessionDto.getType());
+//            session.setJumping(sessionDto.getType());
             session.setCWalkPeed(sessionDto.isCWalkPeed());
             session.setCWalkPooped(sessionDto.isCWalkPooped());
             session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
+
             session.setFPlaying(sessionDto.isFPlaying());
             session.setFCleanKennel(sessionDto.isFCleanKennel());
             session.setFCleanLitter(sessionDto.isFCleanKennel());
@@ -72,12 +64,16 @@ public class SessionService {
             System.out.println(session);
             return ResponseEntity.ok().build();
         }
-            return ResponseEntity.notFound().build();
+        return ResponseEntity.notFound().build();
     }
 
-    public List<Session> findByAnimalID(Long id) {
+    public List<Session> findByAnimalId(Long id) {
         Animal animal = animalRepository.getById(id);
-        List<Session> sessions = sessionRepository.findAllByAnimal(animal);
-        return sessions;
+
+        return sessionRepository.findAllByAnimalId(animal.getId());
+    };
+
+    public List<Session> findAll() {
+        return null;
     }
 }
