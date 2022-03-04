@@ -19,6 +19,8 @@ import java.util.Optional;
         @Autowired
         private final VolunteerRepository volunteerRepository;
 
+
+
         private UserRepository userRepository;
 
         private UserService userService;
@@ -28,8 +30,8 @@ import java.util.Optional;
         }
 
         @GetMapping
-        public Long getVolIdByUserId(){
-            String userName = LoginDto.getUsername();
+        public Long getVolIdByUserId(LoginDto loginDto){
+            String userName = loginDto.getUsername();
             Optional<User> user = userRepository.findByUsername(userName);
             Long userId = user.get().getId();
             Optional<Volunteer> volunteer = volunteerRepository.findById(userId);

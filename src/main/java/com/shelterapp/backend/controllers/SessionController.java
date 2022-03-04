@@ -14,13 +14,11 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:3000")
 public class SessionController {
 
-    private final SessionService sessionService;
-
-    public SessionController(SessionService sessionService) {
-        this.sessionService = sessionService;
-    }
-
     @Autowired
+    private SessionService sessionService;
+
+
+
     @PostMapping
     public ResponseEntity createSession(@RequestBody SessionDto sessionDto) {
         return sessionService.saveSessionData(sessionDto);

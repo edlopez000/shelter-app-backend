@@ -10,6 +10,7 @@ import com.shelterapp.backend.user.UserRepository;
 import com.shelterapp.backend.user.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,8 +33,14 @@ public class HouseController {
     @Autowired
     private UserService userService;
 
-    @Autowired
-    private ModelMapper modelMapper;
+////  @Autowired
+//    private ModelMapper modelMapper;
+//
+//
+//    @Bean
+//    public ModelMapper modelMapper() {
+//        return new ModelMapper();
+//    }
 
     @PostMapping
     @ResponseStatus(HttpStatus.ACCEPTED)
@@ -49,6 +56,7 @@ public class HouseController {
 
     private HouseDto convertToDto(Housekeeping housekeeping) {
 
+        ModelMapper modelMapper = new ModelMapper();
         HouseDto houseDto = modelMapper.map(housekeeping, HouseDto.class);
 
         return houseDto;
@@ -61,6 +69,7 @@ public class HouseController {
     }
 
     private Housekeeping convertToEntity(HouseDto houseDto) throws ParseException{
+        ModelMapper modelMapper = new ModelMapper();
         Housekeeping houseTask = modelMapper.map(houseDto, Housekeeping.class);
 
         if (houseDto.getVolunteerId() != null){
