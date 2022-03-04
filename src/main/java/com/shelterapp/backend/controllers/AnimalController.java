@@ -28,4 +28,9 @@ public class AnimalController {
     @GetMapping("/{id}")
     public Animal getAnimal(@PathVariable Long id) {return animalService.getAnimal(id);}
 
+    @GetMapping("/species/{species}")
+    public List<Animal> findBySpecies(@PathVariable String species) {
+        return animalService.findBySpecies(species);
+    }
+
 }
