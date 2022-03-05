@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 @Transactional
 public interface SessionRepository extends JpaRepository<Session, Long> {
-
-    List<Session> findAllByAnimalId(Long id);
+    List<Session> findSessionByAnimalId(Long animalId);
 };

@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/housekeeping")
@@ -58,7 +59,7 @@ public class HouseController {
 
     @GetMapping(value = "/{id}")
     @ResponseBody
-    public HouseDto getHousekept(@PathVariable("id") Long id){
+    public HouseDto getHousekept(@PathVariable("id") UUID id){
         return convertToDto(houseService.findByVolunteerId(id));
     }
 

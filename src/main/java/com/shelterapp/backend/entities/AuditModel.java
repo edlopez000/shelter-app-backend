@@ -1,4 +1,4 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.data.annotation.CreatedDate;

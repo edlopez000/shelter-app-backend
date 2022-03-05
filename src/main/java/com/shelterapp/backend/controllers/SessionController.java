@@ -17,8 +17,6 @@ public class SessionController {
     @Autowired
     private SessionService sessionService;
 
-
-
     @PostMapping
     public ResponseEntity createSession(@RequestBody SessionDto sessionDto) {
         return sessionService.saveSessionData(sessionDto);
@@ -28,7 +26,7 @@ public class SessionController {
     public List<Session> getAllSessions() {return sessionService.findAll();}
 
 //    @GetMapping("/{id}")
-//    public List<Session> getSessions(@PathVariable Long id) {
+//    public List<Session> getSessionsByAnimalId(@PathVariable int id) {
 //        System.out.println("we are here");
 //        return sessionService.findByAnimalId(id);
 //

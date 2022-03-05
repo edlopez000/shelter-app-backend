@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.TimeZone;
+import java.util.UUID;
 
 @Component
 @NotNull
@@ -19,7 +20,7 @@ public class HouseDto {
 
     private String date;
 
-    private Long volunteerId;
+    private UUID volunteerId;
 
     private boolean hCleanGroomRoom;
 

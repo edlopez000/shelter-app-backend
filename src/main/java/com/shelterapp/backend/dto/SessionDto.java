@@ -2,17 +2,22 @@ package com.shelterapp.backend.dto;
 
 
 import com.shelterapp.backend.util.enums.RatingEnum;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Component
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class SessionDto {
-    private Long volunteerId;
-    private Long animalId;
+    private UUID volunteerId;
+    private UUID animalId;
 
     private LocalDateTime submitTimestamp;
     private RatingEnum type;

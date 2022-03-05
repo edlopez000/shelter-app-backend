@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 public class HouseService {
@@ -26,7 +27,7 @@ public class HouseService {
         this.volunteerRepository=volunteerRepository;
     }
 
-    public Housekeeping findByVolunteerId(Long id) {
+    public Housekeeping findByVolunteerId(UUID id) {
 
 
         Optional<Volunteer> houseVolunteer = volunteerRepository.findById(id);

@@ -1,6 +1,6 @@
 create table animal
 (
-    id           serial
+    id       uuid not null
         constraint animal_pk
             primary key,
     species      varchar   not null,

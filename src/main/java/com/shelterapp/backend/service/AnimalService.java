@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
 public class AnimalService {
@@ -17,7 +18,7 @@ public class AnimalService {
         this.animalRepository = animalRepository;
     }
 
-    public Animal getAnimal(Long id) {
+    public Animal getAnimal(UUID id) {
         return animalRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 

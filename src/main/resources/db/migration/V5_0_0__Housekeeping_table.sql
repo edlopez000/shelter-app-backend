@@ -1,6 +1,6 @@
 create table "houseKept"
 (
-    id                  serial
+    id       uuid not null
         constraint housekept_pk
             primary key,
     user_id             int

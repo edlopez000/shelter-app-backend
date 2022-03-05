@@ -1,27 +1,33 @@
 package com.shelterapp.backend.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.Data;
+import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Entity
 @Table(name = "sessions")
 @Data
 public class Session {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @GeneratedValue(generator = "uuid2")
+    @GenericGenerator(name = "uuid2", strategy = "org.hibernate.id.UUIDGenerator")
+    @Column(name = "id", columnDefinition = "VARCHAR(255)")
+    private UUID id;
 
-    @ManyToOne
-    @JoinColumn(name = "volunteer_id") //FK
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "volunteer_id")
+    @JsonIgnore
     private Volunteer volunteer;
 
-    @ManyToOne
-    @JoinColumn(name = "animal_id") //FK
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "animal_id", nullable = false)
+    @JsonIgnore
     private Animal animal;
 
     @NotNull
