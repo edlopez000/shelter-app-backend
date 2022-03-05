@@ -7,6 +7,8 @@ import com.shelterapp.backend.entities.Volunteer;
 import com.shelterapp.backend.repository.AnimalRepository;
 import com.shelterapp.backend.repository.SessionRepository;
 import com.shelterapp.backend.repository.VolunteerRepository;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
@@ -17,28 +19,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@NoArgsConstructor
+@AllArgsConstructor
 public class SessionService {
 
     @Autowired
-    private final SessionRepository sessionRepository;
+    private SessionRepository sessionRepository;
 
     @Autowired
-    private final VolunteerRepository volunteerRepository;
+    private VolunteerRepository volunteerRepository;
 
     @Autowired
-    private final AnimalRepository animalRepository;
+    private AnimalRepository animalRepository;
 
-
-    public SessionService(AnimalRepository animalRepository,
-                          VolunteerRepository volunteerRepository,
-                          SessionRepository sessionRepository
-    ) {
-        this.animalRepository = animalRepository;
-        this.volunteerRepository = volunteerRepository;
-        this.sessionRepository = sessionRepository;
-    }
-
-    @PostMapping("/session")
     public ResponseEntity saveSessionData(SessionDto sessionDto) {
         Session session = new Session();
         Optional<Volunteer> volunteer = volunteerRepository.findById(sessionDto.getVolunteerId());
@@ -54,14 +47,14 @@ public class SessionService {
 //            session.setLeash(sessionDto.getType());
 //            session.setMouthing(sessionDto.getType());
 //            session.setJumping(sessionDto.getType());
-            session.setCWalkPeed(sessionDto.isCWalkPeed());
-            session.setCWalkPooped(sessionDto.isCWalkPooped());
-            session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
-
-            session.setFPlaying(sessionDto.isFPlaying());
-            session.setFCleanKennel(sessionDto.isFCleanKennel());
-            session.setFCleanLitter(sessionDto.isFCleanKennel());
-            session.setFChangeFoodWater(sessionDto.isFChangeFoodWater());
+//            session.setCWalkPeed(sessionDto.isCWalkPeed());
+//            session.setCWalkPooped(sessionDto.isCWalkPooped());
+//            session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
+//
+//            session.setFPlaying(sessionDto.isFPlaying());
+//            session.setFCleanKennel(sessionDto.isFCleanKennel());
+//            session.setFCleanLitter(sessionDto.isFCleanKennel());
+//            session.setFChangeFoodWater(sessionDto.isFChangeFoodWater());
             sessionRepository.save(session);
             System.out.println(session);
             return ResponseEntity.ok().build();

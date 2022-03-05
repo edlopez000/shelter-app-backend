@@ -31,22 +31,18 @@ public class Animal {
 
     @NotBlank(message = "Color level must not be left blank.")
     @Size(min = 3, max = 50, message = "Color level must be between 3 and 50 characters.")
-    @Column(name = "colorLevel")
     private String colorLevel;
 
     @NotNull
-    @Column(name = "intakeDate")
     private LocalDateTime intakeDate;
 
     @NotNull
-    @Column(name = "exitDate")
     private LocalDateTime exitDate;
 
     @NotNull
     private boolean adoptable;  //logic for if adoptable is false then rescueOnly must be true and vice versa
 
     @NotNull
-    @Column(name = "rescueOnly")
     private boolean rescueOnly; //logic for if rescueOnly is false then adoptable must be true and vice versa
 
 //    @OneToMany(mappedBy = "animal")
