@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 @Service
 @NoArgsConstructor
@@ -62,8 +63,13 @@ public class SessionService {
         return ResponseEntity.notFound().build();
     }
 
-    public List<Session> findByAnimalId(Long id) {
-        return sessionRepository.findSessionByAnimalId(id);
+    public List<Session> findByAnimalId(UUID id) {
+        Optional<List<Session>> listOfSessions = sessionRepository.findSessionsByAnimalId(id);
+        if (listOfSessions.isPresent()) {
+            return listOfSessions.get();
+        }
+        System.out.println("STUFF NOT HERE");
+        return null;
     };
 
     public List<Session> findAll() {

@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/session")
@@ -25,11 +26,11 @@ public class SessionController {
     @GetMapping
     public List<Session> getAllSessions() {return sessionService.findAll();}
 
-//    @GetMapping("/{id}")
-//    public List<Session> getSessionsByAnimalId(@PathVariable int id) {
-//        System.out.println("we are here");
-//        return sessionService.findByAnimalId(id);
-//
-//    }
+    @GetMapping("/{id}")
+    public List<Session> getSessionsByAnimalId(@PathVariable UUID id) {
+        System.out.println("we are here");
+        return sessionService.findByAnimalId(id);
+
+    }
 
 }
