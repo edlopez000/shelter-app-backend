@@ -1,24 +1,17 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.dto.LoginDto;
-import com.shelterapp.backend.models.Housekeeping;
-import com.shelterapp.backend.models.data.HouseRepository;
+import com.shelterapp.backend.entities.Housekeeping;
+import com.shelterapp.backend.repository.HouseRepository;
 import com.shelterapp.backend.service.HouseService;
 import com.shelterapp.backend.dto.HouseDto;
-import com.shelterapp.backend.user.User;
-import com.shelterapp.backend.user.UserRepository;
 import com.shelterapp.backend.user.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import org.modelmapper.ModelMapper;
 
 import java.text.ParseException;
-import java.util.List;
-import java.util.Optional;
 
 @RestController
 @RequestMapping("/housekeeping")

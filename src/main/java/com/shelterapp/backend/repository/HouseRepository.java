@@ -1,6 +1,6 @@
-package com.shelterapp.backend.models.data;
+package com.shelterapp.backend.repository;
 
-import com.shelterapp.backend.models.Housekeeping;
+import com.shelterapp.backend.entities.Housekeeping;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,7 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.entities;
 
 
+import com.shelterapp.backend.entities.Volunteer;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,6 +21,7 @@ public class VolunteerHours {
     private Volunteer volunteer;
 
     private LocalDateTime login;
+
     private LocalDateTime logout;
 
 }

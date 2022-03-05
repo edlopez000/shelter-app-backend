@@ -1,13 +1,10 @@
-package com.shelterapp.backend.models.data;
+package com.shelterapp.backend.repository;
 
-import com.shelterapp.backend.models.Volunteer;
-import org.jetbrains.annotations.NotNull;
+import com.shelterapp.backend.entities.Volunteer;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;
-import java.util.List;
 
 @Repository
 @Transactional

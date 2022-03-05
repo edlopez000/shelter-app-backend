@@ -1,4 +1,4 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.util.enums;
 
 public enum RatingEnum {
 

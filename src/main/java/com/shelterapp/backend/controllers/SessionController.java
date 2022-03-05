@@ -1,6 +1,6 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.models.Session;
+import com.shelterapp.backend.entities.Session;
 import com.shelterapp.backend.service.SessionService;
 import com.shelterapp.backend.dto.SessionDto;
 import org.springframework.beans.factory.annotation.Autowired;

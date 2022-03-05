@@ -1,11 +1,8 @@
 package com.shelterapp.backend.user;
 
-import com.shelterapp.backend.models.Volunteer;
 import lombok.Data;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import java.util.ArrayList;
 import java.util.List;
 

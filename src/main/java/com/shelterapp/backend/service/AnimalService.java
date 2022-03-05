@@ -1,7 +1,7 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.models.Animal;
-import com.shelterapp.backend.models.data.AnimalRepository;
+import com.shelterapp.backend.entities.Animal;
+import com.shelterapp.backend.repository.AnimalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

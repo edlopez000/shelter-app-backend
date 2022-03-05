@@ -1,11 +1,10 @@
 package com.shelterapp.backend.dto;
 
 
-import com.shelterapp.backend.models.RatingEnum;
+import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 

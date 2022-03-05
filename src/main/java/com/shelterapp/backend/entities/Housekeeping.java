@@ -1,13 +1,11 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.entities;
 
-import com.shelterapp.backend.dto.HouseDto;
 import lombok.Data;
 
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "housekept")

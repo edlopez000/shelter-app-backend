@@ -1,8 +1,7 @@
-package com.shelterapp.backend.models.data;
+package com.shelterapp.backend.repository;
 
-import com.shelterapp.backend.models.VolunteerHours;
+import com.shelterapp.backend.entities.VolunteerHours;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import javax.transaction.Transactional;

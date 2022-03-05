@@ -1,16 +1,15 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.models.Animal;
+import com.shelterapp.backend.entities.Animal;
 import com.shelterapp.backend.dto.SessionDto;
-import com.shelterapp.backend.models.Session;
-import com.shelterapp.backend.models.Volunteer;
-import com.shelterapp.backend.models.data.AnimalRepository;
-import com.shelterapp.backend.models.data.SessionRepository;
-import com.shelterapp.backend.models.data.VolunteerRepository;
+import com.shelterapp.backend.entities.Session;
+import com.shelterapp.backend.entities.Volunteer;
+import com.shelterapp.backend.repository.AnimalRepository;
+import com.shelterapp.backend.repository.SessionRepository;
+import com.shelterapp.backend.repository.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;

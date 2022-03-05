@@ -1,5 +1,6 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.entities;
 
+import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.Data;
 
 import javax.persistence.*;

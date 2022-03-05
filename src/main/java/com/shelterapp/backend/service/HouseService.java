@@ -1,17 +1,13 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.models.Housekeeping;
-import com.shelterapp.backend.dto.HouseDto;
-import com.shelterapp.backend.models.Volunteer;
-import com.shelterapp.backend.models.data.HouseRepository;
-import com.shelterapp.backend.models.data.VolunteerRepository;
+import com.shelterapp.backend.entities.Housekeeping;
+import com.shelterapp.backend.entities.Volunteer;
+import com.shelterapp.backend.repository.HouseRepository;
+import com.shelterapp.backend.repository.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
