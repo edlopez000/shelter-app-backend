@@ -5,8 +5,6 @@ import com.shelterapp.backend.models.RatingEnum;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Component
