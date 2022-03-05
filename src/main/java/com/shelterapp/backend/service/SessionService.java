@@ -1,6 +1,5 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.dto.SessionExternalDTO;
 import com.shelterapp.backend.entities.Animal;
 import com.shelterapp.backend.dto.SessionDto;
 import com.shelterapp.backend.entities.Session;
@@ -13,7 +12,6 @@ import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -67,8 +65,6 @@ public class SessionService {
 
     public ResponseEntity<List<Session>> findByAnimalId(UUID id) {
         Optional<List<Session>> listOfSessions = sessionRepository.findSessionByAnimalId(id);
-        SessionExternalDTO sessionExternalDTO = new SessionExternalDTO();
-        List<SessionExternalDTO> sessionExternalDTOList = new ArrayList<>();
         if (listOfSessions.isPresent()) {
             return ResponseEntity.ok(listOfSessions.get());
         }

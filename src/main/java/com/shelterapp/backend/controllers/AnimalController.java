@@ -3,8 +3,10 @@ package com.shelterapp.backend.controllers;
 import com.shelterapp.backend.entities.Animal;
 import com.shelterapp.backend.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;
 
@@ -14,15 +16,12 @@ import java.util.UUID;
 @CrossOrigin(origins = "http://localhost:3000")
 public class AnimalController {
 
-    private final AnimalService animalService;
-
     @Autowired
-    public AnimalController(AnimalService animalService) {
-        this.animalService = animalService;
-    }
+    private AnimalService animalService;
 
     @GetMapping
-    public List<Animal> getAnimals() {
+    public ResponseEntity<List<Animal>> getAnimals() {
+        System.out.println(LocalDateTime.now());
         return animalService.findAll();
     }
 
@@ -32,7 +31,7 @@ public class AnimalController {
     }
 
     @GetMapping("/species/{species}")
-    public List<Animal> findBySpecies(@PathVariable String species) {
+    public ResponseEntity<List<Animal>> findBySpecies(@PathVariable String species) {
         return animalService.findBySpecies(species);
     }
 

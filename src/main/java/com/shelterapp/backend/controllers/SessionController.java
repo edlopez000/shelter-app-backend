@@ -1,6 +1,5 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.dto.SessionExternalDTO;
 import com.shelterapp.backend.entities.Session;
 import com.shelterapp.backend.service.SessionService;
 import com.shelterapp.backend.dto.SessionDto;
