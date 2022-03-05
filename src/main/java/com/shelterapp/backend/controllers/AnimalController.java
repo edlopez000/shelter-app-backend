@@ -26,7 +26,7 @@ public class AnimalController {
     }
 
     @GetMapping("/{id}")
-    public Animal getAnimal(@PathVariable Long id) {
+     public Animal getAnimal(@PathVariable Long id) {
         return animalService.getAnimal(id);
     }
 
@@ -38,6 +38,5 @@ public class AnimalController {
     @PostMapping
     public void createAnimal(@RequestBody Animal animal) {
         animalService.save(animal);
-
     }
 }
