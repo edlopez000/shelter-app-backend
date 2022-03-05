@@ -80,9 +80,7 @@ public class SessionService {
 //                sessionExternalDTOList.add(sessionExternalDTO);
 //            });
             return listOfSessions.get();
-//            return sessionExternalDTOList;
         }
-        System.out.println("STUFF NOT HERE");
         return null;
     };
 

@@ -29,7 +29,6 @@ public class SessionController {
 
     @GetMapping("/{id}")
     public List<Session> getSessionsByAnimalId(@PathVariable UUID id) {
-        System.out.println("we are here");
         return sessionService.findByAnimalId(id);
     }
 
