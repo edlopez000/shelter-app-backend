@@ -3,20 +3,19 @@ package com.shelterapp.backend.entities;
 
 import com.sun.istack.NotNull;
 import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "animal")
-@Data
 public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @NotBlank(message = "Species cannot be left blank.")
     @Size(min = 3, max = 50, message = "Species must be between 3 and 50 characters.")
@@ -46,4 +45,6 @@ public class Animal {
     @Column(name = "rescueOnly")
     private boolean rescueOnly; //logic for if rescueOnly is false then adoptable must be true and vice versa
 
+//    @OneToMany(mappedBy = "animal")
+//    private List<Session> sessionList;
 }

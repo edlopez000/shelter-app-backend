@@ -10,6 +10,5 @@ import java.util.List;
 @Repository
 @Transactional
 public interface AnimalRepository extends JpaRepository<Animal, Long> {
-
-    public List<Animal> findBySpecies(String species);
+    List<Animal> findBySpecies(String species);
 }

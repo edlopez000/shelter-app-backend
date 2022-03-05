@@ -9,7 +9,6 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
 @Component
-@NotNull
 @Data
 public class SessionDto {
     private Long volunteerId;
