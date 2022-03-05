@@ -73,6 +73,12 @@
             <version>22.0.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>8.5.1</version>
+        </dependency>
+
     </dependencies>
 
 

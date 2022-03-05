@@ -16,7 +16,7 @@ public class Animal {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private Long id;
+    private int id;
 
     @NotBlank(message = "Species cannot be left blank.")
     @Size(min = 3, max = 50, message = "Species must be between 3 and 50 characters.")
