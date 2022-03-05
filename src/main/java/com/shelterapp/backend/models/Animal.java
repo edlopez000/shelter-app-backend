@@ -30,6 +30,7 @@ public class Animal {
     private String colorLevel;
 
     @NotNull
+    @Column(name = "intakeDate")
     private LocalDateTime intakeDate;
 
     @NotNull

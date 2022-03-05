@@ -2,13 +2,13 @@ package com.shelterapp.backend.dto;
 
 
 import com.shelterapp.backend.models.RatingEnum;
+import com.sun.istack.NotNull;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 
 @Component
-@NotNull
 @Data
 public class SessionDto {
     private Long volunteerId;

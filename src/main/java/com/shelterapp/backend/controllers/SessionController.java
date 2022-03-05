@@ -27,11 +27,11 @@ public class SessionController {
     @GetMapping
     public List<Session> getAllSessions() {return sessionService.findAll();}
 
-    @GetMapping("/{id}")
-    public List<Session> getSessions(@PathVariable Long id) {
-        System.out.println("we are here");
-        return sessionService.findByAnimalId(id);
-
-    }
+//    @GetMapping("/{id}")
+//    public List<Session> getSessions(@PathVariable Long id) {
+//        System.out.println("we are here");
+//        return sessionService.findByAnimalId(id);
+//
+//    }
 
 }

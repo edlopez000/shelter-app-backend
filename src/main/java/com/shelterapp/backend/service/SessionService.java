@@ -70,11 +70,11 @@ public class SessionService {
         return ResponseEntity.notFound().build();
     }
 
-    public List<Session> findByAnimalId(Long id) {
-        Animal animal = animalRepository.getById(id);
-
-        return sessionRepository.findAllByAnimalId(animal.getId());
-    };
+//    public List<Session> findByAnimalId(Long id) {
+//        Animal animal = animalRepository.getById(id);
+//
+//        return sessionRepository.findAllByAnimalId(animal.getId());
+//    };
 
     public List<Session> findAll() {
         return sessionRepository.findAll();
