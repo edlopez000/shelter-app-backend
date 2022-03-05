@@ -65,23 +65,14 @@ public class SessionService {
         return ResponseEntity.notFound().build();
     }
 
-    public List<Session> findByAnimalId(UUID id) {
+    public ResponseEntity<List<Session>> findByAnimalId(UUID id) {
         Optional<List<Session>> listOfSessions = sessionRepository.findSessionByAnimalId(id);
         SessionExternalDTO sessionExternalDTO = new SessionExternalDTO();
         List<SessionExternalDTO> sessionExternalDTOList = new ArrayList<>();
         if (listOfSessions.isPresent()) {
-            System.out.println(listOfSessions.get());
-//            listOfSessions.get().forEach(el -> {
-//                System.out.println(el.getAnimal());
-//                sessionExternalDTO.setId(el.getId());
-//                sessionExternalDTO.setAnimal(el.getAnimal());
-//                sessionExternalDTO.setVolunteer(el.getVolunteer());
-//                sessionExternalDTO.setSubmitTimestamp(el.getSubmitTimestamp());
-//                sessionExternalDTOList.add(sessionExternalDTO);
-//            });
-            return listOfSessions.get();
+            return ResponseEntity.ok(listOfSessions.get());
         }
-        return null;
+        return ResponseEntity.notFound().build();
     };
 
     public List<Session> findAll() {
