@@ -12,5 +12,5 @@ import java.util.UUID;
 @Repository
 @Transactional
 public interface SessionRepository extends JpaRepository<Session, Long> {
-    Optional<List<Session>> findSessionsByAnimalId(UUID id);
+    Optional<List<Session>> findSessionByAnimalId(UUID id);
 };

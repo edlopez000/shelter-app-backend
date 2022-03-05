@@ -11,7 +11,7 @@ import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
-@Component
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor

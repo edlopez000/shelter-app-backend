@@ -1,5 +1,6 @@
 package com.shelterapp.backend.service;
 
+import com.shelterapp.backend.dto.SessionExternalDTO;
 import com.shelterapp.backend.entities.Animal;
 import com.shelterapp.backend.dto.SessionDto;
 import com.shelterapp.backend.entities.Session;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -64,9 +66,21 @@ public class SessionService {
     }
 
     public List<Session> findByAnimalId(UUID id) {
-        Optional<List<Session>> listOfSessions = sessionRepository.findSessionsByAnimalId(id);
+        Optional<List<Session>> listOfSessions = sessionRepository.findSessionByAnimalId(id);
+        SessionExternalDTO sessionExternalDTO = new SessionExternalDTO();
+        List<SessionExternalDTO> sessionExternalDTOList = new ArrayList<>();
         if (listOfSessions.isPresent()) {
+            System.out.println(listOfSessions.get());
+//            listOfSessions.get().forEach(el -> {
+//                System.out.println(el.getAnimal());
+//                sessionExternalDTO.setId(el.getId());
+//                sessionExternalDTO.setAnimal(el.getAnimal());
+//                sessionExternalDTO.setVolunteer(el.getVolunteer());
+//                sessionExternalDTO.setSubmitTimestamp(el.getSubmitTimestamp());
+//                sessionExternalDTOList.add(sessionExternalDTO);
+//            });
             return listOfSessions.get();
+//            return sessionExternalDTOList;
         }
         System.out.println("STUFF NOT HERE");
         return null;

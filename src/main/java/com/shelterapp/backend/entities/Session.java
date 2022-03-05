@@ -22,12 +22,10 @@ public class Session {
 
     @ManyToOne
     @JoinColumn(name = "volunteer_id")
-    @JsonIgnore
     private Volunteer volunteer;
 
     @ManyToOne
     @JoinColumn(name = "animal_id", nullable = false)
-    @JsonIgnore
     private Animal animal;
 
     private LocalDateTime submitTimestamp;

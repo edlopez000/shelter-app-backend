@@ -14,6 +14,7 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "animal")
+@Data
 public class Animal {
     @Id
     @GeneratedValue(generator = "uuid2")

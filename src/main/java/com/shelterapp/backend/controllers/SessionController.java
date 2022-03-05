@@ -1,5 +1,6 @@
 package com.shelterapp.backend.controllers;
 
+import com.shelterapp.backend.dto.SessionExternalDTO;
 import com.shelterapp.backend.entities.Session;
 import com.shelterapp.backend.service.SessionService;
 import com.shelterapp.backend.dto.SessionDto;
@@ -30,7 +31,6 @@ public class SessionController {
     public List<Session> getSessionsByAnimalId(@PathVariable UUID id) {
         System.out.println("we are here");
         return sessionService.findByAnimalId(id);
-
     }
 
 }
