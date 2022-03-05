@@ -3,7 +3,6 @@ package com.shelterapp.backend.models;
 
 import com.sun.istack.NotNull;
 import lombok.Data;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;

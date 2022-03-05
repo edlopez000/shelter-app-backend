@@ -30,6 +30,11 @@ public class AnimalController {
         return animalService.getAnimal(id);
     }
 
+    @GetMapping("/species/{species}")
+    public List<Animal> findBySpecies(@PathVariable String species) {
+        return animalService.findBySpecies(species);
+    }
+
     @PostMapping
     public void createAnimal(@RequestBody Animal animal) {
         animalService.save(animal);
