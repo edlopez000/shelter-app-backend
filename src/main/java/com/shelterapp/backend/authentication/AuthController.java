@@ -17,6 +17,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Optional;
+import java.util.UUID;
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -36,8 +39,14 @@ public class AuthController {
                 loginDto.getUsername(), loginDto.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
+        Optional<User> user = userRepository.findByUsername(loginDto.getUsername());
+        if (user.isPresent()){
+            return ResponseEntity.ok(user.get().getVolunteer().getId().toString());
+        }
         return new ResponseEntity<>("User signed-in successfully!", HttpStatus.OK);
     }
+
+
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody SignupDto signUpDto) {

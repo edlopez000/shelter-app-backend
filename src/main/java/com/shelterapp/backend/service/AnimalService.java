@@ -1,24 +1,23 @@
 package com.shelterapp.backend.service;
 
-
-import com.shelterapp.backend.models.Animal;
-import com.shelterapp.backend.models.data.AnimalRepository;
+import com.shelterapp.backend.entity.Animal;
+import com.shelterapp.backend.repository.AnimalRepository;
+import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.UUID;
 
 @Service
+@AllArgsConstructor
 public class AnimalService {
 
-    private final AnimalRepository animalRepository;
-
     @Autowired
-    public AnimalService(AnimalRepository animalRepository) {
-        this.animalRepository = animalRepository;
-    }
+    private AnimalRepository animalRepository;
 
-    public Animal getAnimal(Long id) {
+    public Animal getAnimal(UUID id) {
         return animalRepository.findById(id).orElseThrow(RuntimeException::new);
     }
 
@@ -26,11 +25,19 @@ public class AnimalService {
         animalRepository.save(animal);
     }
 
-    public List<Animal> findAll() {
-        return animalRepository.findAll();
+    public ResponseEntity<List<Animal>> findAll() {
+        List<Animal> animalList = animalRepository.findAll();
+        if (animalList.isEmpty()){
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(animalList);
     }
 
-    public List<Animal> findBySpecies(String species) {
-        return animalRepository.findBySpecies(species);
+    public ResponseEntity<List<Animal>> findBySpecies(String species) {
+        List<Animal> animalList = animalRepository.findBySpecies(species);
+        if (animalList.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+        return ResponseEntity.ok(animalList);
     }
 }

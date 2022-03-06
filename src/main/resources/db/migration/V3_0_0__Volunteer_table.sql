@@ -1,6 +1,6 @@
 create table volunteer
 (
-    id                     serial
+    id       uuid not null
         constraint volunteer_pk
             primary key,
     "firstName"            varchar not null,

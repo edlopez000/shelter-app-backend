@@ -1,4 +1,4 @@
-package com.shelterapp.backend.models;
+package com.shelterapp.backend.util.enums;
 
 public enum RatingEnum {
 
@@ -12,10 +12,5 @@ public enum RatingEnum {
     RatingEnum(String displayName) {
         this.displayName = displayName;
     }
-
-    public String getDisplayName() {
-        return displayName;
-    }
-    private RatingEnum type;
 
 }

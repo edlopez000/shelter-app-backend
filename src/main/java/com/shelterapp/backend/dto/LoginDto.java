@@ -1,5 +1,8 @@
 package com.shelterapp.backend.dto;
 
+import lombok.Data;
+
+
 public class LoginDto {
     private String username;
     private String password;
