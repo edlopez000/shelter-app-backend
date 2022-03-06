@@ -18,23 +18,19 @@ import java.util.UUID;
 public class SessionDto {
     private UUID volunteerId;
     private UUID animalId;
+    private String kennelOut;
+    private String kennelThrough;
+    private String kennelIn;
+    private String shyness;
+    private String leash;
+    private String mouthing;
+    private String jumping;
+    private boolean cWalkPeed;
+    private boolean cWalkPooped;
+    private boolean cSeemsHouseTrained;
 
-//    private RatingEnum type;
-
-//    private String kennelOut;
-//    private String kennelThrough;
-//    private String kennelIn;
-//    private String shyness;
-//    private boolean leash;
-//    private boolean mouthing;
-//    private boolean jumping;
-//    private boolean cWalkPeed;
-//    private boolean cWalkPooped;
-//    private boolean cSeemsHouseTrained;
-//    private boolean fPlaying;
-//    private boolean fCleanKennel;
-//    private boolean fCleanLitter;
-//    private boolean fChangeFoodWater;
-
-
+    private boolean fPlaying;
+    private boolean fCleanKennel;
+    private boolean fCleanLitter;
+    private boolean fChangeFoodWater;
 }

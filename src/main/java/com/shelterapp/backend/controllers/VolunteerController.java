@@ -21,30 +21,16 @@ public class VolunteerController {
         @Autowired
         private UserRepository userRepository;
 
+        @Autowired
         private UserService userService;
 
-        public VolunteerController(VolunteerRepository volunteerRepository) {
-            this.volunteerRepository = volunteerRepository;
-        }
-
         @GetMapping
-        public List getAllVolunteers(){
-
-//            String userName = loginDto.getUsername();
-//            Optional<User> user = userRepository.findByUsername(userName);
-//            Long userId = user.get().getId();
-//            Optional<Volunteer> volunteer = volunteerRepository.findById(userId);
-//            Long volId = volunteer.get().getId();
+        public List<Volunteer> getAllVolunteers(){
             return volunteerRepository.findAll();
         }
 
-//        @GetMapping("/{id}")
-//        public
-
         @PostMapping
         public void createVolunteer(@RequestBody Volunteer volunteer) {
-            System.out.println(volunteer);
             volunteerRepository.save(volunteer);
-
         }
     }

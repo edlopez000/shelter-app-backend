@@ -30,30 +30,31 @@ public class Session {
 
     private LocalDateTime submitTimestamp;
 
-    //Both Cats and Dogs sessions will ulimately end up in SessionRepo, however
-    //they should be filtered so each session is isolated as one animal species specific activies
-    //so as not to have nulls or whatnot
     //Dogs Activities to be Mapped from this into a DTO into the receiving point
-//    @Column(name = "kennel_out")
-//    private RatingEnum kennelOut;
-//    @Column(name = "kennel_through")
-//    private RatingEnum kennelThrough;
-//    @Column(name = "kennel_in")
-//    private RatingEnum kennelIn;
-//    @Column(name = "shyness")
-//    private RatingEnum shyness;
-//    @Column(name = "leash")
-//    private RatingEnum leash;
-//    @Column(name = "mouthing")
-//    private RatingEnum mouthing;
-//    @Column(name = "jumping")
-//    private RatingEnum jumping;
-//    @Column(name = "c_walk_peed")
-//    private boolean cWalkPeed;
-//    @Column(name = "c_walk_pooped")
-//    private boolean cWalkPooped;
-//    @Column(name = "c_seems_house_trained")
-//    private boolean cSeemsHouseTrained;
+    @Enumerated(EnumType.STRING)
+    private RatingEnum kennelOut;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum kennelThrough;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum kennelIn;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum shyness;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum leash;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum mouthing;
+
+    @Enumerated(EnumType.STRING)
+    private RatingEnum jumping;
+
+    private boolean cWalkPeed;
+    private boolean cWalkPooped;
+    private boolean cSeemsHouseTrained;
 //
 //    //Cats Activities to be Mapped through a DIFFERENT DTO
 //    @Column(name = "f_playing")

@@ -24,7 +24,9 @@ public class SessionController {
     }
 
     @GetMapping
-    public List<Session> getAllSessions() {return sessionService.findAll();}
+    public List<Session> getAllSessions() {
+        return sessionService.findAll();
+    }
 
     @GetMapping("/{id}")
     public ResponseEntity<List<Session>> getSessionsByAnimalId(@PathVariable UUID id) {
