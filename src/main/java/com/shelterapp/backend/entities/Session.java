@@ -48,22 +48,22 @@ public class Session {
 //    private RatingEnum mouthing;
 //    @Column(name = "jumping")
 //    private RatingEnum jumping;
-//    @Column(name = "c_walk_peed")
-//    private boolean cWalkPeed;
-//    @Column(name = "c_walk_pooped")
-//    private boolean cWalkPooped;
-//    @Column(name = "c_seems_house_trained")
-//    private boolean cSeemsHouseTrained;
+    @Column(name = "c_walk_peed")
+    private boolean cWalkPeed;
+    @Column(name = "c_walk_pooped")
+    private boolean cWalkPooped;
+    @Column(name = "c_seems_house_trained")
+    private boolean cSeemsHouseTrained;
 //
 //    //Cats Activities to be Mapped through a DIFFERENT DTO
-//    @Column(name = "f_playing")
-//    private boolean fPlaying;
-//    @Column(name = "f_clean_kennel")
-//    private boolean fCleanKennel;
-//    @Column(name = "f_clean_litter")
-//    private boolean fCleanLitter;
-//    @Column(name = "f_change_food_water")
-//    private boolean fChangeFoodWater;
+    @Column(name = "f_playing")
+    private boolean fPlaying;
+    @Column(name = "f_clean_kennel")
+    private boolean fCleanKennel;
+    @Column(name = "f_clean_litter")
+    private boolean fCleanLitter;
+    @Column(name = "f_change_food_water")
+    private boolean fChangeFoodWater;
 
 
 }
