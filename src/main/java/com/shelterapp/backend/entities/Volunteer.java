@@ -38,14 +38,10 @@ public class Volunteer {
 
     private boolean canineOrientation;
 
-    //@NotBlank(message = "Color Level cannot be left blank.")
-    //@Size(min = 4, max = 6, message = "Color Level must be between 4 and 6 characters.")
     private String canineColorLevel;
 
     private boolean felineOrientation;
 
-    //@NotBlank(message = "Color Level cannot be left blank.")
-    //@Size(min = 4, max = 6, message = "Color Level must be between 4 and 6 characters.")
     private String felineColorLevel;
 
 

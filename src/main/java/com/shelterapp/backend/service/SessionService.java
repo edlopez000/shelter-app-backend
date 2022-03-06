@@ -7,6 +7,7 @@ import com.shelterapp.backend.entities.Volunteer;
 import com.shelterapp.backend.repository.AnimalRepository;
 import com.shelterapp.backend.repository.SessionRepository;
 import com.shelterapp.backend.repository.VolunteerRepository;
+import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,21 +42,16 @@ public class SessionService {
             session.setAnimal(animal.get());
             session.setVolunteer(volunteer.get());
             session.setSubmitTimestamp(LocalDateTime.now());
-//            session.setKennelOut(sessionDto.getType());
-//            session.setKennelThrough(sessionDto.getType());
-//            session.setKennelIn(sessionDto.getKennelIn());
-//            session.setShyness(sessionDto.getShyness());
-//            session.setLeash(sessionDto.getType());
-//            session.setMouthing(sessionDto.getType());
-//            session.setJumping(sessionDto.getType());
-//            session.setCWalkPeed(sessionDto.isCWalkPeed());
-//            session.setCWalkPooped(sessionDto.isCWalkPooped());
-//            session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
-//
-//            session.setFPlaying(sessionDto.isFPlaying());
-//            session.setFCleanKennel(sessionDto.isFCleanKennel());
-//            session.setFCleanLitter(sessionDto.isFCleanKennel());
-//            session.setFChangeFoodWater(sessionDto.isFChangeFoodWater());
+            session.setKennelOut(evaluateEnum(sessionDto.getKennelOut()));
+            session.setKennelThrough(evaluateEnum(sessionDto.getKennelThrough()));
+            session.setKennelIn(evaluateEnum(sessionDto.getKennelIn()));
+            session.setShyness(evaluateEnum(sessionDto.getShyness()));
+            session.setLeash(evaluateEnum(sessionDto.getLeash()));
+            session.setMouthing(evaluateEnum(sessionDto.getMouthing()));
+            session.setJumping(evaluateEnum(sessionDto.getJumping()));
+            session.setCWalkPeed(sessionDto.isCWalkPeed());
+            session.setCWalkPooped(sessionDto.isCWalkPooped());
+            session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
             sessionRepository.save(session);
             System.out.println(session);
             return ResponseEntity.ok().build();
@@ -73,5 +69,20 @@ public class SessionService {
 
     public List<Session> findAll() {
         return sessionRepository.findAll();
+    }
+
+    private RatingEnum evaluateEnum(String jsonValue) {
+        switch (jsonValue) {
+            case "MILD":
+                return RatingEnum.MILD;
+            case "MODERATE":
+                return RatingEnum.MODERATE;
+            case "SIGNIFICANT":
+                return RatingEnum.SIGNIFICANT;
+            case "NO":
+            default:
+                return RatingEnum.NO;
+
+        }
     }
 }

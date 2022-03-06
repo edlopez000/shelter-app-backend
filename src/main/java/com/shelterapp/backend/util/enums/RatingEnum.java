@@ -13,9 +13,4 @@ public enum RatingEnum {
         this.displayName = displayName;
     }
 
-    public String getDisplayName() {
-        return displayName;
-    }
-    private RatingEnum type;
-
 }
