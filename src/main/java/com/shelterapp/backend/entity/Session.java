@@ -1,12 +1,10 @@
-package com.shelterapp.backend.entities;
+package com.shelterapp.backend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 import java.util.UUID;
 

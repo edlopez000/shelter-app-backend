@@ -1,6 +1,6 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.entities.Housekeeping;
+import com.shelterapp.backend.entity.Housekeeping;
 import com.shelterapp.backend.repository.HouseRepository;
 import com.shelterapp.backend.service.HouseService;
 import com.shelterapp.backend.dto.HouseDto;

@@ -1,7 +1,7 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.entities.Housekeeping;
-import com.shelterapp.backend.entities.Volunteer;
+import com.shelterapp.backend.entity.Housekeeping;
+import com.shelterapp.backend.entity.Volunteer;
 import com.shelterapp.backend.repository.HouseRepository;
 import com.shelterapp.backend.repository.VolunteerRepository;
 import org.springframework.beans.factory.annotation.Autowired;

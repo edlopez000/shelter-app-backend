@@ -1,6 +1,6 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.entities.Animal;
+import com.shelterapp.backend.entity.Animal;
 import com.shelterapp.backend.service.AnimalService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

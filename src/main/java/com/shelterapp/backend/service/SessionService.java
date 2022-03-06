@@ -1,9 +1,9 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.entities.Animal;
+import com.shelterapp.backend.entity.Animal;
 import com.shelterapp.backend.dto.SessionDto;
-import com.shelterapp.backend.entities.Session;
-import com.shelterapp.backend.entities.Volunteer;
+import com.shelterapp.backend.entity.Session;
+import com.shelterapp.backend.entity.Volunteer;
 import com.shelterapp.backend.repository.AnimalRepository;
 import com.shelterapp.backend.repository.SessionRepository;
 import com.shelterapp.backend.repository.VolunteerRepository;
@@ -15,7 +15,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;

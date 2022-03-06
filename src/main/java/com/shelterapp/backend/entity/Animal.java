@@ -1,4 +1,4 @@
-package com.shelterapp.backend.entities;
+package com.shelterapp.backend.entity;
 
 
 import com.sun.istack.NotNull;
@@ -9,7 +9,6 @@ import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Entity

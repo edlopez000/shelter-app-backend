@@ -1,4 +1,4 @@
-package com.shelterapp.backend.entities;
+package com.shelterapp.backend.entity;
 
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;

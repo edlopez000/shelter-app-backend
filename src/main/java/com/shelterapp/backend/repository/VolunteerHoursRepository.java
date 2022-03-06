@@ -1,6 +1,6 @@
 package com.shelterapp.backend.repository;
 
-import com.shelterapp.backend.entities.VolunteerHours;
+import com.shelterapp.backend.entity.VolunteerHours;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,6 +1,6 @@
 package com.shelterapp.backend.service;
 
-import com.shelterapp.backend.entities.Animal;
+import com.shelterapp.backend.entity.Animal;
 import com.shelterapp.backend.repository.AnimalRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

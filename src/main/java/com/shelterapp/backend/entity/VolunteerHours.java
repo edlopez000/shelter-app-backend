@@ -1,7 +1,6 @@
-package com.shelterapp.backend.entities;
+package com.shelterapp.backend.entity;
 
 
-import com.shelterapp.backend.entities.Volunteer;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 

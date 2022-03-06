@@ -1,6 +1,6 @@
 package com.shelterapp.backend.repository;
 
-import com.shelterapp.backend.entities.Session;
+import com.shelterapp.backend.entity.Session;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

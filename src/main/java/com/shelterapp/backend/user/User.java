@@ -1,5 +1,6 @@
 package com.shelterapp.backend.user;
 
+import com.shelterapp.backend.entity.Volunteer;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -19,6 +20,10 @@ public class User {
     private String email;
     private String password;
     private Boolean enabled = true;
+
+    @OneToOne
+    @JoinColumn(name = "volunteer_id", referencedColumnName = "id")
+    private Volunteer volunteer;
 
     public User(String name,
                 String username,
