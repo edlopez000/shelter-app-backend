@@ -1,23 +1,23 @@
 alter table sessions
-    add kennel_out pg_enum;
+    add kennel_out varchar;
 
 alter table sessions
-    add kennel_through pg_enum;
+    add kennel_through varchar;
 
 alter table sessions
-    add kennel_in pg_enum;
+    add kennel_in varchar;
 
 alter table sessions
-    add shyness pg_enum;
+    add shyness varchar;
 
 alter table sessions
-    add leash pg_enum;
+    add leash varchar;
 
 alter table sessions
-    add mouthing pg_enum;
+    add mouthing varchar;
 
 alter table sessions
-    add jumping pg_enum;
+    add jumping varchar;
 
 alter table sessions
     add c_walk_peed bool default false;
