@@ -3,14 +3,8 @@ package com.shelterapp.backend.dto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.Date;
-import java.util.TimeZone;
 import java.util.UUID;
 
 @Data
@@ -18,20 +12,23 @@ import java.util.UUID;
 @NoArgsConstructor
 public class HouseDto {
 
-    //these MUST be the same as the JSON packet keys, if you pass it through this DTO
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     private LocalDateTime submitTimestamp;
 
     private UUID volunteerId;
 
-    private boolean hCleanGroomRoom;
+    private boolean cleanGroomRoom;
 
-    private boolean hEmptyWashKongs;
+    private boolean emptyWashKongs;
 
-    private boolean hOrganizeVolArea;
+    private boolean organizeVolArea;
 
-    private boolean hLaundry;
+    private boolean laundry;
 
-    private boolean hGroundskeeping;
+    private boolean groundsKeeping;
 
 
 }

@@ -23,6 +23,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public class HouseService {
 
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     @Autowired
     private HouseRepository houseRepository;
 
@@ -48,16 +52,15 @@ public class HouseService {
 
             housekeeping.setSubmitTimestamp(LocalDateTime.now());
 
-            housekeeping.setCleanGroomRoom(houseDto.isHCleanGroomRoom());
+            housekeeping.setCleanGroomRoom(houseDto.isCleanGroomRoom());
 
-            housekeeping.setEmptyWashKongs(houseDto.isHEmptyWashKongs());
+            housekeeping.setEmptyWashKongs(houseDto.isEmptyWashKongs());
 
-            housekeeping.setOrganizeVolArea(houseDto.isHOrganizeVolArea());
+            housekeeping.setOrganizeVolArea(houseDto.isOrganizeVolArea());
 
-            housekeeping.setLaundry(houseDto.isHLaundry());
+            housekeeping.setLaundry(houseDto.isLaundry());
 
-            housekeeping.setGroundsKeeping(houseDto.isHGroundskeeping());
-
+            housekeeping.setGroundsKeeping(houseDto.isGroundsKeeping());
             houseRepository.save(housekeeping);
             System.out.println(housekeeping);
             return ResponseEntity.ok().build();

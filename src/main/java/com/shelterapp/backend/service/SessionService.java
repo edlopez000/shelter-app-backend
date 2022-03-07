@@ -24,6 +24,10 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SessionService {
 
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     @Autowired
     private SessionRepository sessionRepository;
 

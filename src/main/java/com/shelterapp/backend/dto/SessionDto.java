@@ -13,7 +13,10 @@ import java.util.UUID;
 @NoArgsConstructor
 public class SessionDto {
 
-    //these MUST be the same as the JSON packet keys, if you pass it through this DTO
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     private UUID volunteerId;
     private UUID animalId;
     private String kennelOut;
@@ -27,8 +30,8 @@ public class SessionDto {
     private boolean cWalkPooped;
     private boolean cHouseTrained;
 
-    private boolean fPlaying;
-    private boolean fCleanKennel;
-    private boolean fCleanLitter;
-    private boolean fChangeFoodWater;
+//    private boolean fPlaying;
+//    private boolean fCleanKennel;
+//    private boolean fCleanLitter;
+//    private boolean fChangeFoodWater;
 }

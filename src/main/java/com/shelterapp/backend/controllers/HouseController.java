@@ -16,6 +16,10 @@ import java.util.UUID;
 @CrossOrigin(origins = "http://localhost:3000")
 public class HouseController {
 
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     @Autowired
     private HouseService houseService;
 
@@ -35,7 +39,6 @@ public class HouseController {
     }
 
     @GetMapping("/{id}")
-    @ResponseBody
     public ResponseEntity<Housekeeping> getHousekeptByHouseId(@PathVariable UUID id){
         return houseService.findByHouseId(id);
     }
