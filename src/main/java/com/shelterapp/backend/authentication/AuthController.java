@@ -2,6 +2,7 @@ package com.shelterapp.backend.authentication;
 
 import com.shelterapp.backend.dto.LoginDto;
 import com.shelterapp.backend.dto.SignupDto;
+import com.shelterapp.backend.entity.Volunteer;
 import com.shelterapp.backend.security.CustomAuthenticationManager;
 import com.shelterapp.backend.user.User;
 import com.shelterapp.backend.user.UserRepository;
@@ -18,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Optional;
-import java.util.UUID;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -34,16 +34,17 @@ public class AuthController {
     private PasswordEncoder passwordEncoder;
 
     @PostMapping("/signin")
-    public ResponseEntity<String> authenticateUser(@RequestBody LoginDto loginDto){
+    public ResponseEntity<Volunteer> authenticateUser(@RequestBody LoginDto loginDto){
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginDto.getUsername(), loginDto.getPassword()));
 
         SecurityContextHolder.getContext().setAuthentication(authentication);
         Optional<User> user = userRepository.findByUsername(loginDto.getUsername());
+
         if (user.isPresent()){
-            return ResponseEntity.ok(user.get().getVolunteer().getId().toString());
+            return ResponseEntity.ok(user.get().getVolunteer());
         }
-        return new ResponseEntity<>("User signed-in successfully!", HttpStatus.OK);
+        return new ResponseEntity("User signed-in successfully!", HttpStatus.OK);
     }
 
 

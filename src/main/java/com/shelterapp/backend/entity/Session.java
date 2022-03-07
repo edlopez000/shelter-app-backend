@@ -28,6 +28,10 @@ public class Session {
 
     private LocalDateTime submitTimestamp;
 
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     //Dogs Activities to be Mapped from this into a DTO into the receiving point
     @Enumerated(EnumType.STRING)
     private RatingEnum kennelOut;
@@ -52,7 +56,7 @@ public class Session {
 
     private boolean cWalkPeed;
     private boolean cWalkPooped;
-    private boolean cSeemsHouseTrained;
+    private boolean cHouseTrained;
 //
 //    //Cats Activities to be Mapped through a DIFFERENT DTO
 //    @Column(name = "f_playing")

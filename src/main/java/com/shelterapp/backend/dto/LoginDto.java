@@ -4,6 +4,10 @@ import lombok.Data;
 
 
 public class LoginDto {
+
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
     private String username;
     private String password;
 

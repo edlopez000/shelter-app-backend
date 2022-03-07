@@ -5,11 +5,11 @@ create table animal
             primary key,
     species      varchar   not null,
     name         varchar   not null,
-    "colorLevel" varchar   not null,
-    "intakeDate" timestamp not null,
-    "exitDate"   timestamp not null,
+    color_level  varchar   not null,
+    intake_date  timestamp not null,
+    exit_date    timestamp not null,
     adoptable    bool      not null,
-    "rescueOnly" bool      not null
+    rescue_only  bool      not null
 );
 
 create unique index animal_id_uindex

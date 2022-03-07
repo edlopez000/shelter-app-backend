@@ -14,6 +14,10 @@ import java.util.UUID;
 @AllArgsConstructor
 public class AnimalService {
 
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
+
     @Autowired
     private AnimalRepository animalRepository;
 
