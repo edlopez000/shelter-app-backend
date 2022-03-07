@@ -1,6 +1,8 @@
 package com.shelterapp.backend.dto;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
 import javax.validation.constraints.NotNull;
@@ -11,14 +13,12 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
 
-@Component
-@NotNull
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 public class HouseDto {
 
     private LocalDateTime submitTimestamp;
-
-    private String date;
 
     private UUID volunteerId;
 
@@ -31,10 +31,6 @@ public class HouseDto {
     private boolean hLaundry;
 
     private boolean hGroundskeeping;
-
-
-
-
 
 
 }

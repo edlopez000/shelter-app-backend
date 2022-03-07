@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -25,78 +26,47 @@ public class HouseController {
     @Autowired
     private HouseRepository houseRepository;
 
-    @Autowired
-    private UserService userService;
-
-////  @Autowired
-//    private ModelMapper modelMapper;
-//
-//
-//    @Bean
-//    public ModelMapper modelMapper() {
-//        return new ModelMapper();
-//    }
 
     @PostMapping
-    @ResponseStatus(HttpStatus.ACCEPTED)
+    public ResponseEntity createHousekept(@RequestBody HouseDto houseDto) {
+        return houseService.saveHouseData(houseDto);
+
+    }
+
+    @GetMapping
+    public List<Housekeeping> getAllHousekept(){
+        return houseService.findAll();
+    }
+
+    @GetMapping("/{id}")
     @ResponseBody
-    public ResponseEntity createHouseKept(@RequestBody HouseDto houseDto) throws ParseException {
-        Housekeeping houseTask = convertToEntity(houseDto);
-        houseRepository.save(houseTask);
-        System.out.println(houseTask);
-        return ResponseEntity.ok().build();
-
+    public ResponseEntity<Housekeeping> getHousekeptByHouseId(@PathVariable UUID id){
+        return houseService.findByHouseId(id);
     }
 
-
-    private HouseDto convertToDto(Housekeeping housekeeping) {
-
-        ModelMapper modelMapper = new ModelMapper();
-        HouseDto houseDto = modelMapper.map(housekeeping, HouseDto.class);
-
-        return houseDto;
+    @GetMapping("/volunteerId/{id}")
+    public ResponseEntity<List<Housekeeping>> getHouseKeptByVolunteerId(@PathVariable UUID id){
+        return houseService.findByVolunteerId(id);
     }
 
-    @GetMapping(value = "/{id}")
-    @ResponseBody
-    public HouseDto getHousekept(@PathVariable("id") UUID id){
-        return convertToDto(houseService.findByVolunteerId(id));
-    }
-
-    private Housekeeping convertToEntity(HouseDto houseDto) throws ParseException{
-        ModelMapper modelMapper = new ModelMapper();
-        Housekeeping houseTask = modelMapper.map(houseDto, Housekeeping.class);
-
-        if (houseDto.getVolunteerId() != null){
-            Housekeeping housekeeping = houseService.findByVolunteerId(houseDto.getVolunteerId());
-            houseTask.setHCleanGroomRoom(
-                    housekeeping.isHCleanGroomRoom());
-            houseTask.setHEmptyWashKongs(
-                    housekeeping.isHEmptyWashKongs());
-            houseTask.setHOrganizeVolArea(
-                    housekeeping.isHOrganizeVolArea());
-            houseTask.setHLaundry(
-                    housekeeping.isHLaundry());
-            houseTask.setHGroundskeeping(
-                    housekeeping.isHGroundskeeping());
-        }
-        return houseTask;
-    };
-
-//    public HouseController(HouseService houseService) {
-//        this.houseService = houseService;
-//    }
+//    private Housekeeping convertToEntity(HouseDto houseDto) throws ParseException{
+//        ModelMapper modelMapper = new ModelMapper();
+//        Housekeeping houseTask = modelMapper.map(houseDto, Housekeeping.class);
 //
-//    @Autowired
-//    @PostMapping
-//    public ResponseEntity createHousekept(@RequestBody HouseDto houseDto){
-//        return houseService.saveHouseData(houseDto);
-//    }
-//
-//    @GetMapping
-//    public List<Housekeeping> getAllHousekept(){
-//        return houseService.findAll();
-//    }
-//
+//        if (houseDto.getVolunteerId() != null){
+//            Housekeeping housekeeping = houseService.findByVolunteerId(houseDto.getVolunteerId());
+//            houseTask.setHCleanGroomRoom(
+//                    housekeeping.isHCleanGroomRoom());
+//            houseTask.setHEmptyWashKongs(
+//                    housekeeping.isHEmptyWashKongs());
+//            houseTask.setHOrganizeVolArea(
+//                    housekeeping.isHOrganizeVolArea());
+//            houseTask.setHLaundry(
+//                    housekeeping.isHLaundry());
+//            houseTask.setHGroundskeeping(
+//                    housekeeping.isHGroundskeeping());
+//        }
+//        return houseTask;
+//    };
 
 }

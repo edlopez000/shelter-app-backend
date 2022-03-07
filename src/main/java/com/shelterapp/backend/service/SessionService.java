@@ -50,7 +50,7 @@ public class SessionService {
             session.setJumping(evaluateEnum(sessionDto.getJumping()));
             session.setCWalkPeed(sessionDto.isCWalkPeed());
             session.setCWalkPooped(sessionDto.isCWalkPooped());
-            session.setCSeemsHouseTrained(sessionDto.isCSeemsHouseTrained());
+            session.setCHouseTrained(sessionDto.isCHouseTrained());
             sessionRepository.save(session);
             System.out.println(session);
             return ResponseEntity.ok().build();

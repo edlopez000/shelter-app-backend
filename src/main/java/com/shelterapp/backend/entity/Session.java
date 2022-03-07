@@ -52,7 +52,7 @@ public class Session {
 
     private boolean cWalkPeed;
     private boolean cWalkPooped;
-    private boolean cSeemsHouseTrained;
+    private boolean cHouseTrained;
 //
 //    //Cats Activities to be Mapped through a DIFFERENT DTO
 //    @Column(name = "f_playing")

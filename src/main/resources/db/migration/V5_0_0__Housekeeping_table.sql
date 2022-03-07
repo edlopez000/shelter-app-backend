@@ -1,19 +1,19 @@
-create table "houseKept"
+create table housekept
 (
     id       uuid not null
         constraint housekept_pk
             primary key,
-    user_id             int
-        constraint housekept_users_id_fk
-            references users
+    volunteer_id             uuid not null
+        constraint housekept_volunteer_id_fk
+            references volunteer
             on update cascade,
-    "submitTimestamp"   timestamp,
-    "h_cleanGroomRoom"  bool,
-    "h_emptyWashKongs"  bool,
-    "h_organizeVolArea" bool,
-    h_laundry           bool,
-    "h_groundsKeeping"  bool
+    submit_timestamp  timestamp not null,
+    clean_groom_room  bool,
+    empty_wash_kongs  bool,
+    organize_vol_area bool,
+    laundry           bool,
+    grounds_keeping   bool
 );
 
 create unique index housekept_id_uindex
-    on "houseKept" (id);
+    on housekept (id);

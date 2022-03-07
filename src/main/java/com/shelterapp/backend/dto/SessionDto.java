@@ -1,14 +1,10 @@
 package com.shelterapp.backend.dto;
 
 
-import com.shelterapp.backend.util.enums.RatingEnum;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.stereotype.Component;
 
-import javax.validation.constraints.NotNull;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 
@@ -27,7 +23,7 @@ public class SessionDto {
     private String jumping;
     private boolean cWalkPeed;
     private boolean cWalkPooped;
-    private boolean cSeemsHouseTrained;
+    private boolean cHouseTrained;
 
     private boolean fPlaying;
     private boolean fCleanKennel;

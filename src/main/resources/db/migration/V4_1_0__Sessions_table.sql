@@ -11,7 +11,18 @@ create table sessions
         constraint sessions_animal_id_fk
             references animal
             on update cascade,
-    "submitTimestamp" timestamp not null
+    submit_timestamp timestamp not null,
+    kennel_out       varchar not null,
+    kennel_through   varchar not null,
+    kennel_in        varchar not null,
+    shyness          varchar not null,
+    leash            varchar not null,
+    mouthing         varchar not null,
+    jumping          varchar not null,
+    c_walk_peed      bool default false,
+    c_walk_pooped    bool default false,
+    c_house_trained  bool default false
+
 );
 
 create unique index sessions_id_uindex
