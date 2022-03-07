@@ -48,15 +48,15 @@ public class HouseService {
 
             housekeeping.setSubmitTimestamp(LocalDateTime.now());
 
-            housekeeping.setHCleanGroomRoom(houseDto.isHCleanGroomRoom());
+            housekeeping.setCleanGroomRoom(houseDto.isHCleanGroomRoom());
 
-            housekeeping.setHEmptyWashKongs(houseDto.isHEmptyWashKongs());
+            housekeeping.setEmptyWashKongs(houseDto.isHEmptyWashKongs());
 
-            housekeeping.setHOrganizeVolArea(houseDto.isHOrganizeVolArea());
+            housekeeping.setOrganizeVolArea(houseDto.isHOrganizeVolArea());
 
-            housekeeping.setHLaundry(houseDto.isHLaundry());
+            housekeeping.setLaundry(houseDto.isHLaundry());
 
-            housekeeping.setHGroundskeeping(houseDto.isHGroundskeeping());
+            housekeeping.setGroundsKeeping(houseDto.isHGroundskeeping());
 
             houseRepository.save(housekeeping);
             System.out.println(housekeeping);
@@ -65,8 +65,9 @@ public class HouseService {
         return ResponseEntity.notFound().build();
     }
 
-    public List<Housekeeping> findAll() {
-        return houseRepository.findAll();
+    public ResponseEntity<List<Housekeeping>> findAll() {
+        List<Housekeeping> houseList = houseRepository.findAll();
+        return ResponseEntity.ok(houseList);
     }
 
 

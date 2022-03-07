@@ -24,16 +24,15 @@ public class Housekeeping {
     private Volunteer volunteer;
 
     @NotNull
-    @Column(name = "submit_timestamp")
     private LocalDateTime submitTimestamp;
-    @Column(name = "h_clean_groom_room")
-    private boolean hCleanGroomRoom;
-    @Column(name = "h_empty_wash_kongs")
-    private boolean hEmptyWashKongs;
-    @Column(name = "h_organize_vol_area")
-    private boolean hOrganizeVolArea;
-    @Column(name = "h_laundry")
-    private boolean hLaundry;
-    @Column(name = "h_groundskeeping")
-    private boolean hGroundskeeping;
+
+    private boolean cleanGroomRoom;
+
+    private boolean emptyWashKongs;
+
+    private boolean organizeVolArea;
+
+    private boolean laundry;
+
+    private boolean groundsKeeping;
 }

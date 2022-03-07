@@ -13,11 +13,12 @@ import java.util.Date;
 import java.util.TimeZone;
 import java.util.UUID;
 
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 public class HouseDto {
 
+    //these MUST be the same as the JSON packet keys, if you pass it through this DTO
     private LocalDateTime submitTimestamp;
 
     private UUID volunteerId;

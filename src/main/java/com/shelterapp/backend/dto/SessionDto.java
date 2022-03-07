@@ -12,6 +12,8 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor
 public class SessionDto {
+
+    //these MUST be the same as the JSON packet keys, if you pass it through this DTO
     private UUID volunteerId;
     private UUID animalId;
     private String kennelOut;

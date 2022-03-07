@@ -1,17 +1,13 @@
 package com.shelterapp.backend.controllers;
 
+import com.shelterapp.backend.dto.HouseDto;
 import com.shelterapp.backend.entity.Housekeeping;
 import com.shelterapp.backend.repository.HouseRepository;
 import com.shelterapp.backend.service.HouseService;
-import com.shelterapp.backend.dto.HouseDto;
-import com.shelterapp.backend.user.UserService;
-import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.text.ParseException;
 import java.util.List;
 import java.util.UUID;
 
@@ -34,7 +30,7 @@ public class HouseController {
     }
 
     @GetMapping
-    public List<Housekeeping> getAllHousekept(){
+    public ResponseEntity<List<Housekeeping>> getAllHousekept(){
         return houseService.findAll();
     }
 
