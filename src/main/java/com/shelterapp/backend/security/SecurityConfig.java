@@ -51,6 +51,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/volunteers").permitAll()
                 .antMatchers("/housekeeping/**").permitAll()
                 .antMatchers("/session/**").permitAll()
+                .antMatchers("/users/**").permitAll()
                 // Other routes will be added here like for example:
                 // .antMatchers("/api/animals/**").hasRole("ROLE_USER")
                 // This will ensure that the API is only available to registered users
