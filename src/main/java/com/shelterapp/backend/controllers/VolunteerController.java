@@ -1,33 +1,44 @@
 package com.shelterapp.backend.controllers;
 
-import com.shelterapp.backend.models.Volunteer;
-import com.shelterapp.backend.services.VolunteerService;
+import com.shelterapp.backend.entity.Volunteer;
+import com.shelterapp.backend.repository.VolunteerRepository;
+import com.shelterapp.backend.user.UserRepository;
+import com.shelterapp.backend.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+
 @RestController
-@RequestMapping(path = "volunteer")
+@RequestMapping("/volunteers")
+@CrossOrigin(origins = "http://localhost:3000")
 public class VolunteerController {
 
-	private final VolunteerService volunteerService;
+    //JSON packet key string must match exactly with column name, case and syntax
+    //if not posting booleans, GET request to see the formatting of the column names
+    //copy and paste from the ResponseBody, the exact column name
 
-	@Autowired
-	public VolunteerController(VolunteerService volunteerService) {
-		this.volunteerService = volunteerService;
-	}
+        @Autowired
+        private VolunteerRepository volunteerRepository;
 
-	@GetMapping
-	public List<Volunteer> getVolunteers(){
-		return volunteerService.getVolunteers();
-	}
+        @Autowired
+        private UserRepository userRepository;
 
-//	@PostMapping
-//	public void registerNewVolunteer(@RequestBody Volunteer volunteer) {
-//		volunteerService.addNewVolunteer(volunteer);
-//	}
+        @Autowired
+        private UserService userService;
 
-}
+        @GetMapping
+        public List<Volunteer> getAllVolunteers(){
+            return volunteerRepository.findAll();
+        }
+
+//        @GetMapping("/{id}")
+//        public ResponseEntity get
+
+        @PostMapping
+        public void createVolunteer(@RequestBody Volunteer volunteer) {
+            volunteerRepository.save(volunteer);
+        }
+    }
